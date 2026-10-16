@@ -308,6 +308,20 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
+.sess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
+@media (max-width:880px){.sess-grid{grid-template-columns:1fr}}
+.sess-dayhead{font-family:"Marcellus",serif;font-size:1.3rem;color:var(--violet);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.1rem}
+.sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
+.sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--hero-gold);margin-bottom:.3rem}
+.sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
+.sess-note{font-size:.88rem;color:var(--ink-2);margin-bottom:.7rem}
+.spk-row{display:flex;flex-wrap:wrap;gap:.65rem .9rem;margin-top:.7rem}
+.spk{display:flex;align-items:center;gap:.5rem;font-size:.86rem}
+.spk-av{position:relative;flex:none;width:34px;height:34px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600;letter-spacing:.02em;overflow:hidden}
+.spk-av::before{content:attr(data-i)}
+.spk-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spk-n{line-height:1.25}
+.spk-n small{display:block;font-size:.76rem;color:var(--ink-3)}
 .draft-note{
   margin-top:1.8rem;font-size:.82rem;color:var(--ink-3);border-left:2px solid var(--gold-line);padding-left:.9rem;
 }
@@ -540,6 +554,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="nav-links" id="navLinks">
       <a href="#who">Who Attends</a>
       <a href="#programme">Programme</a>
+      <a href="#speakers">Speakers</a>
       <a href="#passes">Tickets</a>
       <a href="#venue">Venue</a>
       <a href="#chicago">Chicago</a>
@@ -657,11 +672,86 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         </div>
       </article>
     </div>
-    <p class="draft-note">Session titles, speakers and exact timings will be confirmed closer to the event.</p>
+    <p class="draft-note">Confirmed sessions and speakers are listed below. Remaining slots, including the keynotes, are announced as they are finalised.</p>
   </div>
 </section>
 
-<section class="sec alt" id="passes">
+<section class="sec alt" id="speakers">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Speakers &amp; sessions</p>
+      <h2>Who you will hear from</h2>
+      <p>Sessions confirmed so far. More are being added &mdash; including the keynotes &mdash; and this page is updated as each one is locked in.</p>
+    </div>
+    <div class="sess-grid">
+      <div class="sess-day">
+        <p class="sess-dayhead">Saturday 5 December</p>
+      <article class="sess rv">
+        <p class="sess-time">12:00 pm</p>
+        <h4>Community &amp; public office</h4>
+        <p class="sess-note">A DuPage County Board Member and community advocate, running for Illinois State Representative in the 84th District.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Saba Haider<small>DuPage County Board Member</small></span></span>
+        </div>
+      </article>
+      <article class="sess rv">
+        <p class="sess-time">1:00 pm</p>
+        <h4>Working with the Government: procurement, tenders and more</h4>
+        <p class="sess-note">A live workshop with <strong>Apex Accelerator</strong>, who provide no-cost, confidential one-to-one assistance and training to help businesses win federal, state, local and tribal government contracts.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Ezzy</span></span>
+          <span class="spk"><span class="spk-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Fakhruddin Cutlerywala</span></span>
+          <span class="spk"><span class="spk-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Huzaifa Hussain</span></span>
+        </div>
+      </article>
+      <article class="sess rv">
+        <p class="sess-time">2:00 pm</p>
+        <h4>Panel: Manufacturing Opportunities</h4>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="KR"><img src="img/speaker-kristin-richards.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Kristin Richards<small>Director, Illinois Dept. of Commerce &amp; Economic Opportunity</small></span></span>
+        </div>
+      </article>
+      </div>
+      <div class="sess-day">
+        <p class="sess-dayhead">Sunday 6 December</p>
+      <article class="sess rv">
+        <p class="sess-time">10:00 am</p>
+        <h4>Panel: How do I use AI in my business?</h4>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Alifya Kagalwala</span></span>
+          <span class="spk"><span class="spk-av" data-i="MK"><img src="img/speaker-mufaddal-khambaty.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Mufaddal Khambaty</span></span>
+          <span class="spk"><span class="spk-av" data-i="HP"><img src="img/speaker-hussain-presswala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Presswala</span></span>
+          <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abdeali Nagarwala</span></span>
+        </div>
+      </article>
+      <article class="sess rv">
+        <p class="sess-time">1:00 pm</p>
+        <h4>Sales Mindset</h4>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="TA"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Tasneem Talib Ali</span></span>
+        </div>
+      </article>
+      <article class="sess rv">
+        <p class="sess-time">2:00 pm</p>
+        <h4>Panel: Business Lifecycle, start to finish</h4>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="MK"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Mustaali Kanch</span></span>
+          <span class="spk"><span class="spk-av" data-i="MS"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Mustansir Saifuddin</span></span>
+          <span class="spk"><span class="spk-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Husaina Badshah</span></span>
+          <span class="spk"><span class="spk-av" data-i="TK"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Tasneem Khokha<small>Women Entrepreneurship</small></span></span>
+        </div>
+      </article>
+      </div>
+    </div>
+    <div class="notice rv">
+      <svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg>
+      <span><strong>Also expected to attend:</strong> Dr. M. Anand Prakash, Consul General of India &middot; Zaman Mehdi, Consul General of Pakistan &middot; Congressman Jonathan Jackson, Illinois 1st District &middot; Congressman Raja Krishnamoorthi, Illinois 8th District &middot; John Curran, Illinois State Senator, 41st District.</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec" id="passes">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Registration</p>
@@ -696,7 +786,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec" id="register">
+<section class="sec alt" id="register">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-edit"></use></svg>Complete your registration</p>
@@ -728,7 +818,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
 
 
-<section class="sec alt" id="venue">
+<section class="sec" id="venue">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">The Venue</p>
@@ -741,7 +831,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <li><b><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg>Address</b><span>625 Joliet Road, Willowbrook, Illinois 60527</span></li>
           <li><b><svg class="ic" aria-hidden="true"><use href="#i-plane"></use></svg>Getting there</b><span>Roughly 25&ndash;30 minutes from Chicago Midway (MDW) and about 40 minutes from O&rsquo;Hare (ORD), traffic permitting.</span></li>
           <li><b><svg class="ic" aria-hidden="true"><use href="#i-car"></use></svg>Parking</b><span>On-site parking available for attendees and exhibitors.</span></li>
-          <li><b><svg class="ic" aria-hidden="true"><use href="#i-bed"></use></svg>Hotels</b><span>Hotel details will be shared with registered attendees closer to the event.</span></li>
+          <li><b><svg class="ic" aria-hidden="true"><use href="#i-bed"></use></svg>Preferred hotel</b><span><strong>Delta Hotels by Marriott Chicago Willowbrook</strong>, 7800 S Kingery Highway &mdash; a few minutes from the arena on Route 83. A discounted group rate is available for showcase guests; mention The Biz Connect Showcase when booking. <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Delta%20Hotels%20by%20Marriott%20Chicago%20Willowbrook%207800%20S%20Kingery%20Hwy%20Willowbrook%20IL%2060527" target="_blank" rel="noopener">Directions &amp; phone<svg class="ic" aria-hidden="true"><use href="#i-ext"></use></svg></a></span></li>
         </ul>
       </div>
       <div class="venue-gallery rv">
@@ -782,7 +872,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec" id="chicago">
+<section class="sec alt" id="chicago">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg> Around Chicago</p>
@@ -989,7 +1079,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 </section>
 
 
-<section class="sec alt" id="faq">
+<section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Questions</p>
@@ -1031,6 +1121,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         <h4>Event</h4>
         <a href="#who">Who attends</a>
         <a href="#programme">Programme</a>
+        <a href="#speakers">Speakers</a>
         <a href="#venue">Venue</a>
       </div>
       <div>
