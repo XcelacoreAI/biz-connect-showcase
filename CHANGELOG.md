@@ -25,6 +25,35 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Speakers & sessions section &mdash; attendee page
+New `#speakers` section after the programme, listing the six confirmed sessions
+across both days with named speakers. Answers the main criticism of the page:
+it asked people to give up a weekend without naming a single speaker or session.
+
+Speaker photographs drop in as `img/speaker-<first>-<last>.jpg` &mdash; slugged from
+the name, so `img/speaker-saba-haider.jpg`. Until a file exists, the avatar shows
+the person's initials on a violet disc and the `<img>` removes itself, so missing
+photos look deliberate. No code change needed to add one.
+
+**Deliberately NOT published**, from the source schedule:
+- The three keynote names. The source row reads "List is TBD" above them, so they
+  are candidates, not confirmations. Announcing a sitting CEO who has not agreed
+  would be a serious error.
+- The "TR Coordinator" / "Expo Coordinator" assignments and the MC list &mdash;
+  internal organising data.
+
+The five public officials under "Notable Attendees" **are** published, as "Also
+expected to attend", on Fatima's instruction. Worth confirming their offices are
+content to be named.
+
+### Preferred hotel &mdash; both versions
+The venue block's "Hotel details will be shared with registered attendees" row is
+replaced with Delta Hotels by Marriott Chicago Willowbrook, 7800 S Kingery
+Highway, with a Maps link. Address corroborated from two independent listings;
+Marriott's own site blocks automated requests so the link could not be checked,
+and a Maps search link is used instead. No rate or booking code is stated &mdash;
+if the committee negotiated one, it should be added.
+
 ### Attendee version is now a TWO-day event - 5&ndash;6 December
 The attendee page describes a two-day event. Friday 4 December ("Orientation")
 was removed from the programme entirely, and the remaining days renumbered: day
