@@ -25,6 +25,30 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Sessions updated from the 15 Oct speaker agenda
+**Kristin Richards removed.** She had been published as "Director, Illinois Dept.
+of Commerce &amp; Economic Opportunity" on the Manufacturing panel; the updated
+agenda replaces her with "Illinois Manufacturing Association (TBD)". The live site
+was naming a state official for a session she is no longer listed for. That card
+now reads "Speakers to be announced".
+
+Newer titles and descriptions throughout &mdash; "Sell Differently: the mindset
+shift that changes everything", "Biz Lifecycle: from start to finish", "Community
+and Public Leadership", and the AI panel's revenue framing. Saba Haider's card
+describes the session rather than her candidacy, which the updated draft dropped
+too.
+
+**Keynotes still not published.** The 11am Saturday slot is marked "Keynote
+Speaker (TBD)" in the source, above Abidali Neemuchwala (Co-Founder and Director
+at Dallas Venture Capital, previously CEO and MD of Wipro). The Sunday keynote is
+"Open". The source document is footed "This is a draft schedule. Please do not
+distribute." Nothing goes on the public page until someone confirms acceptance.
+
+### Around Chicago moved below the FAQ
+The tourism and city-restaurant content took a lot of room for a mostly local
+audience, so it is now the last section. Nav order follows the page and the
+background tints were re-flipped to keep alternating.
+
 ### Speakers & sessions section &mdash; attendee page
 New `#speakers` section after the programme, listing the six confirmed sessions
 across both days with named speakers. Answers the main criticism of the page:
