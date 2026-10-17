@@ -314,6 +314,8 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
 .sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--hero-gold);margin-bottom:.3rem}
 .sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
+.sess.pending{background:transparent;border-style:dashed;box-shadow:none}
+.sess.pending h4{color:var(--ink-2)}
 .sess-tba{font-size:.84rem;color:var(--ink-3);font-style:italic;margin-top:.6rem}
 .sess-note{font-size:.88rem;color:var(--ink-2);margin-bottom:.7rem}
 .spk-row{display:flex;flex-wrap:wrap;gap:.65rem .9rem;margin-top:.7rem}
@@ -682,11 +684,16 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="sec-head rv">
       <p class="eyebrow">Speakers &amp; sessions</p>
       <h2>Who you will hear from</h2>
-      <p>Sessions confirmed so far. More are being added &mdash; including the keynotes &mdash; and this page is updated as each one is locked in.</p>
+      <p>Confirmed sessions are listed below. The keynotes and remaining slots are announced here as each one is finalised.</p>
     </div>
     <div class="sess-grid">
       <div class="sess-day">
         <p class="sess-dayhead">Saturday 5 December</p>
+      <article class="sess pending rv">
+        <p class="sess-time">11:00 am</p>
+        <h4>Keynote</h4>
+        <p class="sess-tba">Speaker and session to be announced.</p>
+      </article>
       <article class="sess rv">
         <p class="sess-time">12:00 pm</p>
         <h4>Community and Public Leadership</h4>
@@ -724,6 +731,11 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <span class="spk"><span class="spk-av" data-i="HP"><img src="img/speaker-hussain-presswala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Presswala</span></span>
           <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abdeali Nagarwala</span></span>
         </div>
+      </article>
+      <article class="sess pending rv">
+        <p class="sess-time">11:00 am</p>
+        <h4>Keynote</h4>
+        <p class="sess-tba">Speaker and session to be announced.</p>
       </article>
       <article class="sess rv">
         <p class="sess-time">1:00 pm</p>

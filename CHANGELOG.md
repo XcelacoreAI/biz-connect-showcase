@@ -38,6 +38,11 @@ and Public Leadership", and the AI panel's revenue framing. Saba Haider's card
 describes the session rather than her candidacy, which the updated draft dropped
 too.
 
+**Keynote slots shown as pending.** Both 11am slots now appear as dashed-outline
+cards reading "Keynote &mdash; speaker and session to be announced", so the agenda
+shows the event has keynotes without naming anyone. No name goes on the page until
+acceptance is confirmed.
+
 **Keynotes still not published.** The 11am Saturday slot is marked "Keynote
 Speaker (TBD)" in the source, above Abidali Neemuchwala (Co-Founder and Director
 at Dallas Venture Capital, previously CEO and MD of Wipro). The Sunday keynote is
