@@ -25,6 +25,34 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Saturday's keynote is named, and the open slots are shown
+**Abidali Neemuchwala** &mdash; Co-Founder and Director at Dallas Venture Capital,
+previously CEO and Managing Director of Wipro &mdash; is published as the speaker
+for the Saturday 11am keynote, **CEO Stories**. Confirmed by Mansoor Anjarwala on
+16 October. Speaker count in the hero goes 13 &rarr; 14, and he leads the lineup
+strip. A photograph drops in at `img/speaker-abidali-neemuchwala.jpg` if one is
+supplied; until then the avatar shows his initials like everyone else's.
+
+**The Sunday 11am slot was never a session.** The schedule reads "Keynote Open"
+&mdash; an open keynote slot with no session and no speaker. This page had been
+showing a "Closing keynote" with a description of what it would cover; both were
+invented here, not taken from the schedule, and are now gone. The card reads
+"Keynote" and carries the "Speaker announced soon" pill, nothing more.
+
+**Both days now run 9am&ndash;3pm, as the schedule does.** The five hours it marks
+"Open slot &mdash; Program to be announced" (9am, 10am and 3pm Saturday; 9am, 12pm
+and 3pm Sunday) are published as dashed, muted cards rather than left out. Leaving
+them out made a half-built programme look finished, and the page claims
+8:30am&ndash;3:30pm days while showing nothing before 11am.
+
+Two small CSS additions: `.sess.open` for those cards, and a keynote-card override
+so a named speaker on the violet gradient is legible &mdash; the `--ink-3` title
+colour and the violet avatar disc both vanish against it.
+
+**`exhibitors.html` does not have any of this.** It still has no speakers section
+at all, so this is not a three-line fix there; the whole section needs porting
+across.
+
 ### Countdown replaced by the at-a-glance stats
 The hero's days/hours/minutes/seconds counter is gone, along with its script and
 CSS. A ticking clock seven weeks out is motion without information. The four

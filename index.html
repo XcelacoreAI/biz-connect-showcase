@@ -338,7 +338,18 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .spk-av::before{content:attr(data-i)}
 .spk-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .spk-n{line-height:1.25}
-.spk-n small{display:block;font-size:.76rem;color:var(--ink-3)}
+.spk-n small{display:block;font-size:.76rem;color:var(--ink-3);line-height:1.35;max-width:34ch}
+/* A named speaker inside a keynote card sits on the violet gradient, where
+   the light-surface tokens above are unreadable and the violet avatar disc
+   disappears into the background. */
+.sess.keynote .spk-n{color:#fff;font-size:.95rem}
+.sess.keynote .spk-n small{color:#D9CCE6}
+.sess.keynote .spk-av{background:rgba(255,255,255,.16);color:#fff}
+/* An hour the committee has not filled yet. Quiet on purpose: it is a real
+   row on the schedule, but it should read as "not yet" rather than compete
+   with the sessions that are confirmed. */
+.sess.open{background:none;border-style:dashed;box-shadow:none}
+.sess.open h4{color:var(--ink-3);font-size:1rem;margin-bottom:0}
 .draft-note{
   margin-top:1.8rem;font-size:.82rem;color:var(--ink-3);border-left:2px solid var(--gold-line);padding-left:.9rem;
 }
@@ -633,7 +644,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
     <ul class="glance-grid hero-stats rv">
       <li><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg><b>14</b><span class="g-l">Hours</span><span class="g-s">Of programme across the weekend</span></li>
-      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>13</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>14</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>6</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg><b>$5</b><span class="g-l">Entry</span><span class="g-s">In advance &middot; $10 at the door</span></li>
     </ul>
@@ -726,6 +737,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <p>Confirmed sessions are listed below. The keynotes and remaining slots are announced here as each one is finalised.</p>
     </div>
     <ul class="lineup rv">
+      <li class="lu"><span class="lu-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Abidali Neemuchwala</span><span class="lu-r">CEO Stories</span></li>
       <li class="lu"><span class="lu-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Saba Haider</span><span class="lu-r">Community &amp; Public Leadership</span></li>
       <li class="lu"><span class="lu-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Alifya Kagalwala</span><span class="lu-r">AI in your business</span></li>
       <li class="lu"><span class="lu-av" data-i="MK"><img src="img/speaker-mufaddal-khambaty.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mufaddal Khambaty</span><span class="lu-r">AI in your business</span></li>
@@ -745,11 +757,21 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="sess-grid">
       <div class="sess-day">
         <p class="sess-dayhead">Saturday 5 December</p>
+      <article class="sess open rv">
+        <p class="sess-time">9:00 am</p>
+        <h4>Programme to be announced</h4>
+      </article>
+      <article class="sess open rv">
+        <p class="sess-time">10:00 am</p>
+        <h4>Programme to be announced</h4>
+      </article>
       <article class="sess keynote rv">
         <p class="sess-time">11:00 am &middot; Keynote</p>
         <h4>CEO Stories</h4>
-        <p class="sess-note">Prominent CEOs on the journey, what it cost, and the mistakes they would tell you to skip.</p>
-        <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
+        <p class="sess-note">Prominent CEOs share their journeys and what they learned along the way.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abidali Neemuchwala<small>Co-Founder and Director, Dallas Venture Capital; previously CEO and Managing Director, Wipro</small></span></span>
+        </div>
       </article>
       <article class="sess rv">
         <p class="sess-time">12:00 pm</p>
@@ -775,9 +797,17 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         <p class="sess-note">How to get into manufacturing &mdash; tips, grants, tax breaks and more, with the Illinois Manufacturing Association.</p>
         <p class="sess-tba">Speakers to be announced.</p>
       </article>
+      <article class="sess open rv">
+        <p class="sess-time">3:00 pm</p>
+        <h4>Programme to be announced</h4>
+      </article>
       </div>
       <div class="sess-day">
         <p class="sess-dayhead">Sunday 6 December</p>
+      <article class="sess open rv">
+        <p class="sess-time">9:00 am</p>
+        <h4>Programme to be announced</h4>
+      </article>
       <article class="sess rv">
         <p class="sess-time">10:00 am</p>
         <h4>How do I use AI in my business?</h4>
@@ -791,9 +821,12 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       </article>
       <article class="sess keynote rv">
         <p class="sess-time">11:00 am &middot; Keynote</p>
-        <h4>Closing keynote</h4>
-        <p class="sess-note">The second of the two keynote sessions, closing out the weekend.</p>
+        <h4>Keynote</h4>
         <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
+      </article>
+      <article class="sess open rv">
+        <p class="sess-time">12:00 pm</p>
+        <h4>Programme to be announced</h4>
       </article>
       <article class="sess rv">
         <p class="sess-time">1:00 pm</p>
@@ -813,6 +846,10 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <span class="spk"><span class="spk-av" data-i="MS"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Mustansir Saifuddin</span></span>
           <span class="spk"><span class="spk-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Husaina Badshah</span></span>
         </div>
+      </article>
+      <article class="sess open rv">
+        <p class="sess-time">3:00 pm</p>
+        <h4>Programme to be announced</h4>
       </article>
       </div>
     </div>
