@@ -25,6 +25,27 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The schedule shares one time axis
+The two days were independent stacks, so the hours did not line up. Saturday
+10am is a one-line open slot; Sunday 10am carries a four-speaker panel &mdash; so
+by 11am the two keynotes, the thing a reader most wants to compare, sat about
+150px apart, and 1pm on one day was level with 2pm on the other. "11:00 am" was
+printed fourteen times.
+
+Both days run the identical seven hours, which makes a shared axis possible.
+There is now **one grid**: an hour rail down the left, then that hour on each
+day. Rows size to the taller card. The keynotes line up and read as a pair &mdash;
+one named, one pending. "What is on at 1pm" is a glance. Fourteen time labels
+become seven.
+
+Open slots stretch to their row and centre their text, so a short card reads as
+a deliberate block rather than floating in the gap left by a tall neighbour.
+
+**Below 880px** there is no room for a rail plus two columns, so it collapses to
+one column grouped **by hour**: the rail label becomes a full-width row heading
+and each card names its own day. Grouping by day instead would need a different
+DOM order than the desktop grid.
+
 ### Who attends, and why &mdash; rewritten from the 2026 brochure
 Both sections now use the committee's own "Biz Connect Showcase &mdash; Event of
 the Year 2026" brochure, which makes the case far better than the page did.

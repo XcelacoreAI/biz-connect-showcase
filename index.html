@@ -329,9 +329,28 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .aud .ic{flex:none;color:var(--gold);margin-top:.15rem}
 .aud h4{font-family:"Marcellus",serif;font-size:1.02rem;margin-bottom:.25rem}
 .aud p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
-.sess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
-@media (max-width:880px){.sess-grid{grid-template-columns:1fr}}
-.sess-dayhead{font-family:"Marcellus",serif;font-size:1.3rem;color:var(--violet);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.1rem}
+/* ---------- the schedule grid ----------
+   One grid across both days, not two independent stacks: an hour rail down the
+   left, then that hour on each day. Rows size to the taller card, which is what
+   keeps 11am level with 11am. */
+.sched{display:grid;grid-template-columns:5.5rem 1fr 1fr;column-gap:clamp(1rem,2.5vw,2.25rem);row-gap:1rem;align-items:stretch}
+.sched-hour{font-family:"Marcellus",serif;font-size:1.05rem;color:var(--ink-3);padding-top:1.05rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sched .sess{margin-bottom:0}
+.sched-blank{border:1px dashed var(--rule)}
+/* Day sits on the card only on mobile, where the rail is gone. */
+.sess-when{display:none}
+@media (max-width:880px){
+  /* No room for a rail plus two columns. One column grouped BY HOUR: the rail
+     label becomes a row heading and each card names its day. Grouping by day
+     would need a different DOM order than the desktop grid. */
+  .sched{grid-template-columns:1fr;row-gap:.75rem}
+  .sched-corner,.sched .sess-dayhead{display:none}
+  .sched-hour{padding-top:1.4rem;font-size:1.15rem;color:var(--violet);border-bottom:1px solid var(--rule);padding-bottom:.4rem}
+  .sess-when{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-3);margin-bottom:.3rem}
+  .sess.keynote .sess-when{color:#D9CCE6}
+}
+.sess-dayhead{font-family:"Marcellus",serif;font-size:1.3rem;color:var(--violet);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:0;align-self:end}
+.sess-dayhead small{display:block;font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-3);margin-top:.35rem}
 .sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
 .sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.3rem}
 .sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
@@ -360,6 +379,9 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
    row on the schedule, but it should read as "not yet" rather than compete
    with the sessions that are confirmed. */
 .sess.open{background:none;border-style:dashed;box-shadow:none}
+/* Stretched to its row, so the text centres rather than sitting at the top of
+   a tall empty box next to a four-speaker panel. */
+.sess.open{display:flex;flex-direction:column;justify-content:center}
 .sess.open h4{color:var(--ink-3);font-size:1rem;margin-bottom:0}
 .draft-note{
   margin-top:1.8rem;font-size:.82rem;color:var(--ink-3);border-left:2px solid var(--gold-line);padding-left:.9rem;
@@ -753,63 +775,30 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <!-- h3, not a styled <p>: the timetable is a named sub-part of this
          section and belongs under the h2 in the document outline. -->
     <h3 class="agenda-head rv">Biz Connect Chicago 2026 Speaker Agenda</h3>
-    <div class="sess-grid">
-      <div class="sess-day">
-        <p class="sess-dayhead">Saturday 5 December</p>
+    <!-- ONE grid, not two stacks. Both days run the same seven hours, so the
+         hours sit in a rail down the left and each row holds that hour on both
+         days — the keynotes line up and 14 repeated time labels become 7. Two
+         independent columns drifted: a one-line open slot opposite a
+         four-speaker panel put the 11am keynotes ~150px apart.
+         Below 880px it collapses to one column grouped BY HOUR; each card
+         names its own day. -->
+    <div class="sched">
+      <p class="sched-corner" aria-hidden="true"></p>
+      <p class="sess-dayhead">Saturday 5 December<small>8:30am &ndash; 3:30pm</small></p>
+      <p class="sess-dayhead">Sunday 6 December<small>8:30am &ndash; 3:30pm</small></p>
+      <p class="sched-hour">9:00 am</p>
       <article class="sess open rv">
-        <p class="sess-time">9:00 am</p>
-        <h4>Programme to be announced</h4>
-      </article>
-      <article class="sess open rv">
-        <p class="sess-time">10:00 am</p>
-        <h4>Programme to be announced</h4>
-      </article>
-      <article class="sess keynote rv">
-        <p class="sess-time">11:00 am &middot; Keynote</p>
-        <h4>CEO Stories</h4>
-        <p class="sess-note">Prominent CEOs share their journeys and what they learned along the way.</p>
-        <div class="spk-row">
-          <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abidali Neemuchwala<small>Co-Founder and Director, Dallas Venture Capital; previously CEO and Managing Director, Wipro</small></span></span>
-        </div>
-      </article>
-      <article class="sess rv">
-        <p class="sess-time">12:00 pm</p>
-        <h4>Community and Public Leadership</h4>
-        <p class="sess-note">A conversation on community priorities, civic engagement and the connections between business and public service.</p>
-        <div class="spk-row">
-          <span class="spk"><span class="spk-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Saba Haider</span></span>
-        </div>
-      </article>
-      <article class="sess rv">
-        <p class="sess-time">1:00 pm</p>
-        <h4>Working with the Government: a practical workshop</h4>
-        <p class="sess-note">A hands-on workshop with <strong>APEX Accelerator</strong>: procurement opportunities, tender readiness, and the steps toward competing for government contracts.</p>
-        <div class="spk-row">
-          <span class="spk"><span class="spk-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Ezzy</span></span>
-          <span class="spk"><span class="spk-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Fakhruddin Cutlerywala</span></span>
-          <span class="spk"><span class="spk-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Huzaifa Hussain</span></span>
-        </div>
-      </article>
-      <article class="sess rv">
-        <p class="sess-time">2:00 pm</p>
-        <h4>Manufacturing Opportunities</h4>
-        <p class="sess-note">How to get into manufacturing &mdash; tips, grants, tax breaks and more, with the Illinois Manufacturing Association.</p>
-        <p class="sess-tba">Speakers to be announced.</p>
+        <p class="sess-when">Saturday 5 December</p>        <h4>Programme to be announced</h4>
       </article>
       <article class="sess open rv">
-        <p class="sess-time">3:00 pm</p>
-        <h4>Programme to be announced</h4>
+        <p class="sess-when">Sunday 6 December</p>        <h4>Programme to be announced</h4>
       </article>
-      </div>
-      <div class="sess-day">
-        <p class="sess-dayhead">Sunday 6 December</p>
+      <p class="sched-hour">10:00 am</p>
       <article class="sess open rv">
-        <p class="sess-time">9:00 am</p>
-        <h4>Programme to be announced</h4>
+        <p class="sess-when">Saturday 5 December</p>        <h4>Programme to be announced</h4>
       </article>
       <article class="sess rv">
-        <p class="sess-time">10:00 am</p>
-        <h4>How do I use AI in my business?</h4>
+        <p class="sess-when">Sunday 6 December</p>        <h4>How do I use AI in my business?</h4>
         <p class="sess-note">A panel on using AI to generate more revenue for your business.</p>
         <div class="spk-row">
           <span class="spk"><span class="spk-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Alifya Kagalwala</span></span>
@@ -818,26 +807,56 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abdeali Nagarwala</span></span>
         </div>
       </article>
+      <p class="sched-hour">11:00 am</p>
       <article class="sess keynote rv">
-        <p class="sess-time">11:00 am &middot; Keynote</p>
-        <h4>Keynote</h4>
+        <p class="sess-when">Saturday 5 December</p>
+        <p class="sess-time">Keynote</p>        <h4>CEO Stories</h4>
+        <p class="sess-note">Prominent CEOs share their journeys and what they learned along the way.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abidali Neemuchwala<small>Co-Founder and Director, Dallas Venture Capital; previously CEO and Managing Director, Wipro</small></span></span>
+        </div>
+      </article>
+      <article class="sess keynote rv">
+        <p class="sess-when">Sunday 6 December</p>
+        <p class="sess-time">Keynote</p>        <h4>Keynote</h4>
         <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
       </article>
+      <p class="sched-hour">12:00 pm</p>
+      <article class="sess rv">
+        <p class="sess-when">Saturday 5 December</p>        <h4>Community and Public Leadership</h4>
+        <p class="sess-note">A conversation on community priorities, civic engagement and the connections between business and public service.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Saba Haider</span></span>
+        </div>
+      </article>
       <article class="sess open rv">
-        <p class="sess-time">12:00 pm</p>
-        <h4>Programme to be announced</h4>
+        <p class="sess-when">Sunday 6 December</p>        <h4>Programme to be announced</h4>
+      </article>
+      <p class="sched-hour">1:00 pm</p>
+      <article class="sess rv">
+        <p class="sess-when">Saturday 5 December</p>        <h4>Working with the Government: a practical workshop</h4>
+        <p class="sess-note">A hands-on workshop with <strong>APEX Accelerator</strong>: procurement opportunities, tender readiness, and the steps toward competing for government contracts.</p>
+        <div class="spk-row">
+          <span class="spk"><span class="spk-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Ezzy</span></span>
+          <span class="spk"><span class="spk-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Fakhruddin Cutlerywala</span></span>
+          <span class="spk"><span class="spk-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Huzaifa Hussain</span></span>
+        </div>
       </article>
       <article class="sess rv">
-        <p class="sess-time">1:00 pm</p>
-        <h4>Sell Differently: the mindset shift that changes everything</h4>
+        <p class="sess-when">Sunday 6 December</p>        <h4>Sell Differently: the mindset shift that changes everything</h4>
         <p class="sess-note">What if your biggest sales barrier isn&rsquo;t your strategy, your skills or your pipeline &mdash; but your mindset? How a shift in perspective can transform the way you sell, influence and win.</p>
         <div class="spk-row">
           <span class="spk"><span class="spk-av" data-i="TA"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Tasneem Talib Ali</span></span>
         </div>
       </article>
+      <p class="sched-hour">2:00 pm</p>
       <article class="sess rv">
-        <p class="sess-time">2:00 pm</p>
-        <h4>Biz Lifecycle: from start to finish</h4>
+        <p class="sess-when">Saturday 5 December</p>        <h4>Manufacturing Opportunities</h4>
+        <p class="sess-note">How to get into manufacturing &mdash; tips, grants, tax breaks and more, with the Illinois Manufacturing Association.</p>
+        <p class="sess-tba">Speakers to be announced.</p>
+      </article>
+      <article class="sess rv">
+        <p class="sess-when">Sunday 6 December</p>        <h4>Biz Lifecycle: from start to finish</h4>
         <p class="sess-note">Lessons on ideation, starting, sustaining, growing and scaling a business, including women&rsquo;s entrepreneurship.</p>
         <div class="spk-row">
           <span class="spk"><span class="spk-av" data-i="TK"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Tasneem Khokha</span></span>
@@ -846,11 +865,13 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <span class="spk"><span class="spk-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Husaina Badshah</span></span>
         </div>
       </article>
+      <p class="sched-hour">3:00 pm</p>
       <article class="sess open rv">
-        <p class="sess-time">3:00 pm</p>
-        <h4>Programme to be announced</h4>
+        <p class="sess-when">Saturday 5 December</p>        <h4>Programme to be announced</h4>
       </article>
-      </div>
+      <article class="sess open rv">
+        <p class="sess-when">Sunday 6 December</p>        <h4>Programme to be announced</h4>
+      </article>
     </div>
   </div>
 </section>
