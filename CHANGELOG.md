@@ -25,6 +25,16 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Preferred hotel gets a block of its own
+The hotel moved out of the venue facts list into its own card below the venue
+photographs: exterior photograph, address, the group-rate note, and two links
+&mdash; Google Maps directions and the Marriott page. On both versions.
+
+`img/hotel-delta-willowbrook.jpg` is the hotel's own marketing photograph,
+supplied by Fatima. **Permission to use it has not been confirmed** &mdash; hotels
+normally welcome this from a partner event, but a line to the hotel would settle
+it. The `onerror` handler hides the photo panel if the file is ever removed.
+
 ### Audience-specific reasons to attend
 Five cards under the Who Attends chips, one each for manufacturers, service
 providers and professionals, startups, retailers and wholesalers, and anyone
