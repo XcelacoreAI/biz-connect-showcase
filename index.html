@@ -286,22 +286,11 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
   background:var(--gold);transform:rotate(45deg);opacity:.85;
 }
 
-/* ---------- programme ---------- */
-.days{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
-.day{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.2rem,4vw,3rem);padding-block:2.1rem;border-bottom:1px solid var(--rule)}
-.day-no{
-  font-family:"Marcellus",serif;font-size:clamp(2.2rem,6vw,3.4rem);line-height:.9;color:var(--gold);
-  font-variant-numeric:tabular-nums;min-width:2.4ch;
-}
-.day-body h3{font-size:1.42rem;margin-bottom:.15rem}
-.day-date{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:.9rem}
-.day-body p{color:var(--ink-2);font-size:.96rem;max-width:62ch}
-.day-focus{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:.9rem}
-.day-list{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.6rem}
-@media (max-width:640px){.day-list{grid-template-columns:1fr}}
-.day-list li{display:flex;gap:.6rem;font-size:.9rem;color:var(--ink-2);line-height:1.5}
-.day-list li .ic{color:var(--gold);margin-top:.2rem;width:1.05rem;height:1.05rem}
-.day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
+/* ---------- programme ----------
+   The day cards (.days/.day/.day-no/.day-date/.day-focus/.day-list/
+   .day-theme) lived here until the themed Programme section merged into
+   the agenda. Their replacement is .allday, below with the speakers
+   styles. */
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
 .lineup{list-style:none;padding:0;margin:0 0 2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:1.6rem 1rem}
@@ -318,9 +307,18 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .aud .ic{flex:none;color:var(--gold);margin-top:.15rem}
 .aud h4{font-family:"Marcellus",serif;font-size:1.02rem;margin-bottom:.25rem}
 .aud p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+/* "Running throughout, both days" — the floor, which has no hour and so
+   cannot sit in the timetable. Replaced the themed day cards. */
+.allday{list-style:none;margin:0 0 2.6rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem 1.4rem}
+.allday li{display:flex;gap:.75rem;align-items:flex-start;min-width:0}
+.allday .ic{flex:none;color:var(--gold);margin-top:.25rem;width:1.15rem;height:1.15rem}
+.allday b{display:block;font-family:"Marcellus",serif;font-weight:400;font-size:1.02rem;line-height:1.3;color:var(--ink)}
+.allday span{display:block;font-size:.86rem;color:var(--ink-2);line-height:1.45;margin-top:.15rem}
 .sess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
 @media (max-width:880px){.sess-grid{grid-template-columns:1fr}}
 .sess-dayhead{font-family:"Marcellus",serif;font-size:1.3rem;color:var(--violet);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.1rem}
+/* Hours, which used to sit on the day cards. */
+.sess-dayhead small{display:block;font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-3);margin-top:.3rem}
 .sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
 .sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.3rem}
 .sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
@@ -601,7 +599,6 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="nav-links" id="navLinks">
       <a href="#who">Who Attends</a>
       <a href="#programme">Programme</a>
-      <a href="#speakers">Speakers</a>
       <a href="#passes">Tickets</a>
       <a href="#venue">Venue</a>
       <a href="#faq">FAQ</a>
@@ -630,7 +627,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="hero-meta">
       <div class="meta-item">
         <span class="k"><svg class="ic" aria-hidden="true"><use href="#i-calendar"></use></svg>Dates</span>
-        <span class="v">5&ndash;6 December 2026<small>8:30am &ndash; 3:30pm both days</small></span>
+        <span class="v">5&ndash;6 December 2026<small>9:00am &ndash; 3:30pm both days</small></span>
       </div>
       <div class="meta-item">
         <span class="k"><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg>Venue</span>
@@ -643,7 +640,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     </div>
 
     <ul class="glance-grid hero-stats rv">
-      <li><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg><b>14</b><span class="g-l">Hours</span><span class="g-s">Of programme across the weekend</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg><b>13</b><span class="g-l">Hours</span><span class="g-s">Of programme across the weekend</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>14</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>6</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg><b>$5</b><span class="g-l">Entry</span><span class="g-s">In advance &middot; $10 at the door</span></li>
@@ -688,55 +685,21 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 </section>
 
 
-<section class="sec" id="programme">
+
+
+<!-- One section, three layers: the people, the floor, the timetable. The
+     themed day cards that used to sit above this described the same two days
+     in a second visual language and had drifted into promising sessions the
+     schedule does not contain. #speakers stays as an id on the lineup so links
+     shared while the two were separate still land here. -->
+<section class="sec alt" id="programme">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Programme</p>
-      <h2>Two days of inspiration, innovation &amp; opportunity</h2>
-      <p>Each day has its own job. Day one puts the businesses in front of the room, day two turns all of it into what comes next.</p>
-    </div>
-    <div class="days rv">
-      <article class="day">
-        <div class="day-no">01</div>
-        <div class="day-body">
-          <h3>Discover<span class="day-theme">Explore</span></h3>
-          <p class="day-date">Saturday 5 December</p>
-          <p class="day-focus">Learn &bull; Explore &bull; Collaborate</p>
-          <ul class="day-list">
-            <li><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg><span>Business Expo &amp; Product Showcase</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-panel"></use></svg><span>Expert Speakers &amp; Industry Panels</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg><span>Manufacturing Pavilion</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-play"></use></svg><span>Live Demonstrations</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="day">
-        <div class="day-no">02</div>
-        <div class="day-body">
-          <h3>Grow<span class="day-theme">Thrive</span></h3>
-          <p class="day-date">Sunday 6 December</p>
-          <p class="day-focus">Lead &bull; Innovate &bull; Thrive</p>
-          <ul class="day-list">
-            <li><svg class="ic" aria-hidden="true"><use href="#i-rocket"></use></svg><span>Startup &amp; Innovation Spotlight</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-chart"></use></svg><span>Leadership &amp; Business Growth Sessions</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><span>Closing Keynote</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-award"></use></svg><span>Recognition Ceremony &amp; Final Networking</span></li>
-          </ul>
-        </div>
-      </article>
-    </div>
-    <p class="draft-note">Confirmed sessions and speakers are listed below. Remaining slots, including the keynotes, are announced as they are finalised.</p>
-  </div>
-</section>
-
-<section class="sec alt" id="speakers">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Speakers &amp; sessions</p>
       <h2>Who you will hear from</h2>
-      <p>Confirmed sessions are listed below. The keynotes and remaining slots are announced here as each one is finalised.</p>
+      <p>Two days, fourteen speakers and a full exhibition floor. Confirmed sessions are below; the remaining slots and the second keynote are announced here as each is finalised.</p>
     </div>
-    <ul class="lineup rv">
+    <ul class="lineup rv" id="speakers">
       <li class="lu"><span class="lu-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Abidali Neemuchwala</span><span class="lu-r">CEO Stories</span></li>
       <li class="lu"><span class="lu-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Saba Haider</span><span class="lu-r">Community &amp; Public Leadership</span></li>
       <li class="lu"><span class="lu-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Alifya Kagalwala</span><span class="lu-r">AI in your business</span></li>
@@ -753,10 +716,20 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <li class="lu"><span class="lu-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Husaina Badshah</span><span class="lu-r">Biz Lifecycle</span></li>
     </ul>
 
+    <!-- The floor. These have no hour, so the timetable below cannot hold
+         them — that is the test before adding anything here. -->
+    <p class="lineup-lead rv">Running throughout, both days</p>
+    <ul class="allday rv">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg><div><b>Business Expo &amp; Product Showcase</b><span>The full exhibition floor, open both days.</span></div></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg><div><b>Manufacturing Pavilion</b><span>Makers and suppliers from across North America.</span></div></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-play"></use></svg><div><b>Live Demonstrations</b><span>Products shown and demonstrated on the floor.</span></div></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><div><b>Open networking</b><span>Between every session, and across the dining areas.</span></div></li>
+    </ul>
+
     <p class="lineup-lead rv">Full agenda, both days</p>
     <div class="sess-grid">
       <div class="sess-day">
-        <p class="sess-dayhead">Saturday 5 December</p>
+        <p class="sess-dayhead">Saturday 5 December<small>9:00am &ndash; 3:30pm</small></p>
       <article class="sess open rv">
         <p class="sess-time">9:00 am</p>
         <h4>Programme to be announced</h4>
@@ -803,7 +776,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       </article>
       </div>
       <div class="sess-day">
-        <p class="sess-dayhead">Sunday 6 December</p>
+        <p class="sess-dayhead">Sunday 6 December<small>9:00am &ndash; 3:30pm</small></p>
       <article class="sess open rv">
         <p class="sess-time">9:00 am</p>
         <h4>Programme to be announced</h4>
@@ -857,6 +830,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg>
       <span><strong>Also expected to attend:</strong> Dr. M. Anand Prakash, Consul General of India &middot; Zaman Mehdi, Consul General of Pakistan &middot; Congressman Jonathan Jackson, Illinois 1st District &middot; Congressman Raja Krishnamoorthi, Illinois 8th District &middot; John Curran, Illinois State Senator, 41st District.</span>
     </div>
+    <p class="draft-note">Session titles and timings are confirmed as the committee finalises them. Open hours above are real slots on the schedule, not gaps in this page.</p>
   </div>
 </section>
 
@@ -1252,7 +1226,6 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         <h4>Event</h4>
         <a href="#who">Who attends</a>
         <a href="#programme">Programme</a>
-        <a href="#speakers">Speakers</a>
         <a href="#venue">Venue</a>
       </div>
       <div>
