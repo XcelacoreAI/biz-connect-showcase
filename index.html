@@ -304,19 +304,34 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
-.lineup{list-style:none;padding:0;margin:0 0 2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:1.6rem 1rem}
-.lu{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem}
-.lu-av{position:relative;width:88px;height:88px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.5rem;letter-spacing:.02em;overflow:hidden;box-shadow:0 2px 10px rgba(36,23,51,.16)}
-.lu-av::before{content:attr(data-i)}
-.lu-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.lu-n{font-family:"Marcellus",serif;font-size:.97rem;line-height:1.25;color:var(--ink)}
-.lu-r{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.3}
+/* ---------- speaker cards ----------
+   Replaced .lineup / .lu — a strip of 88px discs with a name and session under
+   each. It had nowhere for a title, so the only speaker with credentials had
+   them buried in an agenda card, and 14 across 6 columns ended 6/6/2. */
+.spk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem;margin-bottom:2.6rem}
+.spk-card{display:flex;align-items:flex-start;gap:.9rem;min-width:0;background:var(--surface);border:1px solid var(--rule);padding:1rem 1.1rem}
+.spk-card-body{min-width:0}
+.spk-card h4{font-size:1.05rem;line-height:1.25}
+.spk-title{font-size:.82rem;color:var(--ink-2);line-height:1.4;margin-top:.25rem}
+.spk-session{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-top:.5rem}
+/* --av-tint is set per speaker inline: three tints from one hue family, so 14
+   discs do not read as a placeholder grid and the two pairs sharing initials
+   (AN, MK) are told apart before photographs exist. All carry white above 5:1. */
+.spk-card-av{position:relative;flex:none;width:64px;height:64px;border-radius:50%;background:var(--av-tint,var(--violet));color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.15rem;letter-spacing:.02em;overflow:hidden}
+.spk-card-av::before{content:attr(data-i)}
+.spk-card-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* The headline booking takes the full first row. */
+.spk-card.key{grid-column:1/-1;gap:1.3rem;padding:1.4rem 1.5rem;border-color:var(--gold-line);box-shadow:var(--shadow)}
+.spk-card.key .spk-card-av{width:96px;height:96px;font-size:1.7rem}
+.spk-card.key h4{font-size:clamp(1.25rem,2.6vw,1.55rem)}
+.spk-card.key .spk-title{font-size:.92rem;max-width:62ch}
+.key-badge{display:inline-block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;margin-bottom:.5rem}
+@media (max-width:560px){.spk-card.key .spk-card-av{width:72px;height:72px;font-size:1.3rem}}
 /* Heads the timetable. Was .lineup-lead — a .74rem uppercase label reading
    "Full agenda, both days", which sat between the lineup strip and the agenda
    looking like a caption on the strip above rather than a title for the grid
    below. Now a real heading; inherits Marcellus and weight 400 from h3. */
 .agenda-head{font-size:clamp(1.5rem,3.4vw,2.05rem);line-height:1.18;color:var(--ink);margin:3rem 0 1.8rem;padding-bottom:.85rem;border-bottom:2px solid var(--gold-line)}
-@media (max-width:520px){.lineup{grid-template-columns:repeat(auto-fit,minmax(6.5rem,1fr));gap:1.2rem .6rem}.lu-av{width:68px;height:68px;font-size:1.2rem}}
 .aud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin-top:1.6rem}
 .aud{display:flex;gap:.8rem;background:var(--surface);border:1px solid var(--rule);padding:1rem 1.1rem}
 .aud .ic{flex:none;color:var(--gold);margin-top:.15rem}
@@ -338,7 +353,7 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .sess-note{font-size:.88rem;color:var(--ink-2);margin-bottom:.7rem}
 .spk-row{display:flex;flex-wrap:wrap;gap:.65rem .9rem;margin-top:.7rem}
 .spk{display:flex;align-items:center;gap:.5rem;font-size:.86rem}
-.spk-av{position:relative;flex:none;width:34px;height:34px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600;letter-spacing:.02em;overflow:hidden}
+.spk-av{position:relative;flex:none;width:34px;height:34px;border-radius:50%;background:var(--av-tint,var(--violet));color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600;letter-spacing:.02em;overflow:hidden}
 .spk-av::before{content:attr(data-i)}
 .spk-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .spk-n{line-height:1.25}
@@ -842,22 +857,69 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <p class="eyebrow">Speakers</p>
       <h2>Who you will hear from</h2>
     </div>
-    <ul class="lineup rv">
-      <li class="lu"><span class="lu-av" data-i="AN"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Abidali Neemuchwala</span><span class="lu-r">CEO Stories</span></li>
-      <li class="lu"><span class="lu-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Saba Haider</span><span class="lu-r">Community &amp; Public Leadership</span></li>
-      <li class="lu"><span class="lu-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Alifya Kagalwala</span><span class="lu-r">AI in your business</span></li>
-      <li class="lu"><span class="lu-av" data-i="MK"><img src="img/speaker-mufaddal-khambaty.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mufaddal Khambaty</span><span class="lu-r">AI in your business</span></li>
-      <li class="lu"><span class="lu-av" data-i="HP"><img src="img/speaker-hussain-presswala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Hussain Presswala</span><span class="lu-r">AI in your business</span></li>
-      <li class="lu"><span class="lu-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Abdeali Nagarwala</span><span class="lu-r">AI in your business</span></li>
-      <li class="lu"><span class="lu-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Hussain Ezzy</span><span class="lu-r">Working with Government</span></li>
-      <li class="lu"><span class="lu-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Fakhruddin Cutlerywala</span><span class="lu-r">Working with Government</span></li>
-      <li class="lu"><span class="lu-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Huzaifa Hussain</span><span class="lu-r">Working with Government</span></li>
-      <li class="lu"><span class="lu-av" data-i="TA"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Tasneem Talib Ali</span><span class="lu-r">Sell Differently</span></li>
-      <li class="lu"><span class="lu-av" data-i="TK"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Tasneem Khokha</span><span class="lu-r">Biz Lifecycle</span></li>
-      <li class="lu"><span class="lu-av" data-i="MK"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mustaali Kanch</span><span class="lu-r">Biz Lifecycle</span></li>
-      <li class="lu"><span class="lu-av" data-i="MS"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mustansir Saifuddin</span><span class="lu-r">Biz Lifecycle</span></li>
-      <li class="lu"><span class="lu-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Husaina Badshah</span><span class="lu-r">Biz Lifecycle</span></li>
-    </ul>
+    <!-- Cards, not the 88px disc strip this replaced: the strip had nowhere
+         to put a title, so the one speaker with credentials had them buried
+         in an agenda card, and 14 across 6 columns ended 6/6/2. The keynote
+         takes the full first row. --av-tint is set per speaker; see the
+         .spk-card-av rule. -->
+    <div class="spk-grid rv">
+      <article class="spk-card key">
+        <span class="spk-card-av" data-i="AN" style="--av-tint:#6b2f9e"><img src="img/speaker-abidali-neemuchwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><p class="key-badge">Keynote</p><h4>Abidali Neemuchwala</h4><p class="spk-title">Co-Founder and Director, Dallas Venture Capital; previously CEO and Managing Director, Wipro</p><p class="spk-session">CEO Stories</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="SH" style="--av-tint:#4a2470"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Saba Haider</h4><p class="spk-session">Community &amp; Public Leadership</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="AK" style="--av-tint:#8b4bbf"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Alifya Kagalwala</h4><p class="spk-session">AI in your business</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="MK" style="--av-tint:#6b2f9e"><img src="img/speaker-mufaddal-khambaty.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Mufaddal Khambaty</h4><p class="spk-session">AI in your business</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="HP" style="--av-tint:#4a2470"><img src="img/speaker-hussain-presswala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Hussain Presswala</h4><p class="spk-session">AI in your business</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="AN" style="--av-tint:#8b4bbf"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Abdeali Nagarwala</h4><p class="spk-session">AI in your business</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="HE" style="--av-tint:#6b2f9e"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Hussain Ezzy</h4><p class="spk-session">Working with Government</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="FC" style="--av-tint:#4a2470"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Fakhruddin Cutlerywala</h4><p class="spk-session">Working with Government</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="HH" style="--av-tint:#8b4bbf"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Huzaifa Hussain</h4><p class="spk-session">Working with Government</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="TA" style="--av-tint:#6b2f9e"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Tasneem Talib Ali</h4><p class="spk-session">Sell Differently</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="TK" style="--av-tint:#4a2470"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Tasneem Khokha</h4><p class="spk-session">Biz Lifecycle</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="MK" style="--av-tint:#8b4bbf"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Mustaali Kanch</h4><p class="spk-session">Biz Lifecycle</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="MS" style="--av-tint:#6b2f9e"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Mustansir Saifuddin</h4><p class="spk-session">Biz Lifecycle</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="HB" style="--av-tint:#4a2470"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Husaina Badshah</h4><p class="spk-session">Biz Lifecycle</p></div>
+      </article>
+    </div>
 
     <div class="notice rv">
       <svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg>

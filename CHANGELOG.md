@@ -25,6 +25,30 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Speakers become cards, and the keynote is featured
+The portrait strip was fourteen identical 88px discs with a name and a session
+under each. It had nowhere to put a title &mdash; so Abidali Neemuchwala's
+credentials appeared once, buried in an agenda card &mdash; and fourteen across six
+columns ended 6/6/2 with the last row stranded.
+
+Each speaker is now a **card**: avatar, name, title where there is one, session.
+The **keynote takes the full first row** with a gold border, a "Keynote" badge and
+a larger avatar; he is the headline booking and was previously indistinguishable
+from the other thirteen.
+
+**Avatar tints.** Three shades from one hue family, assigned in list order rather
+than hashed from the name. Fourteen identical discs read as a placeholder grid,
+and two pairs collide on their initials &mdash; Abidali Neemuchwala / Abdeali
+Nagarwala are both "AN", Mufaddal Khambaty / Mustaali Kanch are both "MK" &mdash;
+so without this they are literally the same circle. The assignment guarantees no
+two people sharing initials share a tint. All three carry white text above 5:1
+(#6B2F9E 8.1:1, #4A2470 12.4:1, #8B4BBF 5.2:1); keep any replacement above 4.5:1,
+since the initials are the only content in the disc.
+
+**Photographs are still missing &mdash; all fourteen.** Nothing matches
+`img/speaker-<first>-<last>.jpg` yet, so every card shows initials. Dropping a
+file in is the whole change; no code edit.
+
 ### The full agenda moves under the two day cards
 The timetable now sits inside the **Programme** section, directly beneath the 01
 Discover / 02 Grow cards and the line that introduces it &mdash; "Confirmed
