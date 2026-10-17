@@ -25,6 +25,18 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Audience-specific reasons to attend
+Five cards under the Who Attends chips, one each for manufacturers, service
+providers and professionals, startups, retailers and wholesalers, and anyone
+trying to sell more. Each points at a **real session on the agenda** rather than
+making a generic promise &mdash; the page previously listed twelve audience types
+and offered all of them the same thing.
+
+### One ticket, either day
+The ticket card now says one ticket covers both days and you may come to either,
+and a new FAQ answers it directly with what each day leans toward. Two full days
+read as a large ask; this lowers it without inventing a single-day price.
+
 ### Sessions updated from the 15 Oct speaker agenda
 **Kristin Richards removed.** She had been published as "Director, Illinois Dept.
 of Commerce &amp; Economic Opportunity" on the Manufacturing panel; the updated
