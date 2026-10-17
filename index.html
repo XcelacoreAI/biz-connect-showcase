@@ -308,16 +308,25 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
+.lineup{list-style:none;padding:0;margin:0 0 2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:1.6rem 1rem}
+.lu{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem}
+.lu-av{position:relative;width:88px;height:88px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.5rem;letter-spacing:.02em;overflow:hidden;box-shadow:0 2px 10px rgba(36,23,51,.16)}
+.lu-av::before{content:attr(data-i)}
+.lu-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lu-n{font-family:"Marcellus",serif;font-size:.97rem;line-height:1.25;color:var(--ink)}
+.lu-r{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.3}
+.lineup-lead{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-3);padding-bottom:.7rem;border-bottom:1px solid var(--rule);margin-bottom:1.6rem}
+@media (max-width:520px){.lineup{grid-template-columns:repeat(auto-fit,minmax(6.5rem,1fr));gap:1.2rem .6rem}.lu-av{width:68px;height:68px;font-size:1.2rem}}
 .aud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin-top:1.6rem}
 .aud{display:flex;gap:.8rem;background:var(--surface);border:1px solid var(--rule);padding:1rem 1.1rem}
-.aud .ic{flex:none;color:var(--hero-gold);margin-top:.15rem}
+.aud .ic{flex:none;color:var(--gold);margin-top:.15rem}
 .aud h4{font-family:"Marcellus",serif;font-size:1.02rem;margin-bottom:.25rem}
 .aud p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
 .sess-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
 @media (max-width:880px){.sess-grid{grid-template-columns:1fr}}
 .sess-dayhead{font-family:"Marcellus",serif;font-size:1.3rem;color:var(--violet);padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.1rem}
 .sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
-.sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--hero-gold);margin-bottom:.3rem}
+.sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.3rem}
 .sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
 .sess.pending{background:transparent;border-style:dashed;box-shadow:none}
 .sess.pending h4{color:var(--ink-2)}
@@ -708,6 +717,23 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <h2>Who you will hear from</h2>
       <p>Confirmed sessions are listed below. The keynotes and remaining slots are announced here as each one is finalised.</p>
     </div>
+    <ul class="lineup rv">
+      <li class="lu"><span class="lu-av" data-i="SH"><img src="img/speaker-saba-haider.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Saba Haider</span><span class="lu-r">Community &amp; Public Leadership</span></li>
+      <li class="lu"><span class="lu-av" data-i="AK"><img src="img/speaker-alifya-kagalwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Alifya Kagalwala</span><span class="lu-r">AI in your business</span></li>
+      <li class="lu"><span class="lu-av" data-i="MK"><img src="img/speaker-mufaddal-khambaty.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mufaddal Khambaty</span><span class="lu-r">AI in your business</span></li>
+      <li class="lu"><span class="lu-av" data-i="HP"><img src="img/speaker-hussain-presswala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Hussain Presswala</span><span class="lu-r">AI in your business</span></li>
+      <li class="lu"><span class="lu-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Abdeali Nagarwala</span><span class="lu-r">AI in your business</span></li>
+      <li class="lu"><span class="lu-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Hussain Ezzy</span><span class="lu-r">Working with Government</span></li>
+      <li class="lu"><span class="lu-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Fakhruddin Cutlerywala</span><span class="lu-r">Working with Government</span></li>
+      <li class="lu"><span class="lu-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Huzaifa Hussain</span><span class="lu-r">Working with Government</span></li>
+      <li class="lu"><span class="lu-av" data-i="TA"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Tasneem Talib Ali</span><span class="lu-r">Sell Differently</span></li>
+      <li class="lu"><span class="lu-av" data-i="TK"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Tasneem Khokha</span><span class="lu-r">Biz Lifecycle</span></li>
+      <li class="lu"><span class="lu-av" data-i="MK"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mustaali Kanch</span><span class="lu-r">Biz Lifecycle</span></li>
+      <li class="lu"><span class="lu-av" data-i="MS"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Mustansir Saifuddin</span><span class="lu-r">Biz Lifecycle</span></li>
+      <li class="lu"><span class="lu-av" data-i="HB"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="lu-n">Husaina Badshah</span><span class="lu-r">Biz Lifecycle</span></li>
+    </ul>
+
+    <p class="lineup-lead rv">Full agenda, both days</p>
     <div class="sess-grid">
       <div class="sess-day">
         <p class="sess-dayhead">Saturday 5 December</p>

@@ -25,6 +25,22 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Speakers section leads with the people &mdash; and a contrast fix
+A lineup strip now opens the section: all thirteen named speakers as 88px
+portraits with their name and session beneath, before the timetable. The section
+asks "Who you will hear from" and previously answered with a schedule whose
+speakers were 34px discs at the bottom of each card.
+
+**Accessibility fix.** `.sess-time` and the audience-card icons used
+`--hero-gold` (#E3BE63) on white: **1.78:1**, well under the 4.5:1 AA needs.
+Both now use `--gold` (#7E5D12), the token the palette already carries for light
+surfaces and which `.place-kind` was already using &mdash; **6.07:1**. This was a
+regression introduced with those two components; the rest of the site was
+unaffected because gold elsewhere sits on the dark hero and band.
+
+Checked at 1280, 768 and 375px: no horizontal overflow, and portraits drop to
+68px below 520px.
+
 ### Preferred hotel gets a block of its own
 The hotel moved out of the venue facts list into its own card below the venue
 photographs: exterior photograph, address, the group-rate note, and two links
