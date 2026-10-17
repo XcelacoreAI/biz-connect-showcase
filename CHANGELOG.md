@@ -25,6 +25,31 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Who attends, and why &mdash; rewritten from the 2026 brochure
+Both sections now use the committee's own "Biz Connect Showcase &mdash; Event of
+the Year 2026" brochure, which makes the case far better than the page did.
+
+**Who attends** was twelve chips &mdash; Entrepreneurs, Business owners,
+Professionals, Manufacturers &mdash; naming audiences without saying why any of
+them was there. It is now **"Who you'll meet"**: six roles, each with the reason
+that role is in the room (Executives, seeking partners and vendors; Founders,
+ready to raise or launch; Investors, looking for vetted opportunities; and so
+on). A motive is what makes a room legible &mdash; it tells a reader who they
+want to find, and whether anyone wants to find them.
+
+**New section: "Eight reasons to attend"** (brochure page 3, "What's in it for
+you"), between Who attends and Programme. Fresh perspectives, sector pavilions,
+brand visibility, real conversations, hands-on workshops, connections that last,
+CEO stories, networking bingo. Nav gains a "Why Attend" entry and every section
+below it flips tint to keep the alternation.
+
+One correction carried in: the brochure titles its seventh reason
+**"Manufacturing"** but the body reads "Learn from CEOs as they share their
+journeys and insights", which describes **CEO Stories**, the Saturday keynote.
+The body is unambiguous and matches a real session, so it is titled CEO Stories
+here. If a manufacturing reason was intended, the Manufacturing Opportunities
+session is the one to point at.
+
 ### Speakers become cards, and the keynote is featured
 The portrait strip was fourteen identical 88px discs with a name and a session
 under each. It had nowhere to put a title &mdash; so Abidali Neemuchwala's
