@@ -25,6 +25,14 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The agenda gets a real heading
+"Full agenda, both days" was a 0.74rem uppercase label sitting between the lineup
+strip and the timetable, where it read as a caption on the portraits above rather
+than a title for the grid below. It is now **Biz Connect Chicago 2026 Speaker
+Agenda** &mdash; a serif `<h3>` at display size with a gold rule under it, which
+also puts the timetable under the section `<h2>` in the document outline instead
+of leaving it as an unlabelled grid.
+
 ### Saturday's keynote is named, and the open slots are shown
 **Abidali Neemuchwala** &mdash; Co-Founder and Director at Dallas Venture Capital,
 previously CEO and Managing Director of Wipro &mdash; is published as the speaker
