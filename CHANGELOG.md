@@ -25,35 +25,6 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
-### The themed Programme merged into the agenda
-Two sections described the same two days in two visual languages. A reader met
-"Saturday 5 December" twice and got different information each time &mdash; the
-day cards said 8:30am&ndash;3:30pm, the agenda ran 9am&ndash;3pm.
-
-The day cards were written before a schedule existed and had drifted into
-contradicting it. They promised a **Closing Keynote** two sections above the card
-saying the Sunday keynote is unannounced, plus a **Recognition Ceremony** and a
-**Startup &amp; Innovation Spotlight** that appear nowhere on the schedule. The
-intro claimed day one puts businesses in front of the room and day two turns it
-into what comes next; the real split is subject matter &mdash; Saturday civic,
-procurement and manufacturing, Sunday AI, sales and lifecycle.
-
-One section now, three layers: the lineup strip, then the floor, then the
-timetable. The cards held exactly one thing a timetable structurally cannot &mdash;
-the expo floor, Manufacturing Pavilion and live demonstrations have no hour,
-because they run continuously. That is the new "Running throughout, both days"
-band. The themes (01/02, Discover/Grow, Explore/Thrive, the focus lines) and the
-four invented items are gone, and the hours moved onto the agenda's day headers.
-
-**Hours are now 9:00am&ndash;3:30pm**, confirmed by Mansoor Anjarwala &mdash; the
-schedule's first slot is 9am and its last is 3pm. The hero stat follows: 13 hours,
-not 14.
-
-Nav and footer collapse Programme and Speakers into one entry. The section keeps
-`id="programme"` and the lineup carries `id="speakers"`, so links shared while the
-two were separate still land correctly. `.days`/`.day-*` CSS is removed and
-`.allday` replaces it.
-
 ### Saturday's keynote is named, and the open slots are shown
 **Abidali Neemuchwala** &mdash; Co-Founder and Director at Dallas Venture Capital,
 previously CEO and Managing Director of Wipro &mdash; is published as the speaker
