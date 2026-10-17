@@ -25,6 +25,28 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The Saturday keynote gets a promo band, and Abidali a portrait
+The committee's own social card for the keynote now runs as a band straight
+after the programme, so it lands on a reader who has just passed the 11:00 am
+slot. It is the one place on the page with a direct **Register to attend** CTA
+attached to a named draw.
+
+The artwork already carries his name and title in its own typography, so the
+copy beside it deliberately does **not** repeat them &mdash; it gives the slot,
+the session and the action instead.
+
+His face was cropped out of the same card for `img/speaker-abidali-neemuchwala.jpg`,
+which the speaker card and his agenda avatar pick up automatically &mdash; the
+first real photograph of any of the fourteen. The crop keeps the card's yellow
+backing, which reads deliberately in a circle.
+
+**Two naming notes from the artwork.** It gives his full name as **Abidali
+Zainuddin Neemuchwala**, where the page says "Abidali Neemuchwala". And its
+title line is **"Co-Founder and Director at Dallas Venture Capital"** with no
+mention of Wipro &mdash; the "previously CEO and Managing Director, Wipro" half on
+the page came from project notes, not from committee material. Both left as they
+are for now; the committee should pick which is correct.
+
 ### Guests of honour get a section
 The five public officials were one sentence &mdash; "Also expected to attend:" &mdash;
 run together at the foot of the agenda. They now have a section of their own

@@ -296,6 +296,19 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
+/* ---------- keynote promo band ----------
+   The committee's social card at a size worth looking at, beside the slot and
+   the call to action. The artwork already carries his name and title in its
+   own typography, so nothing here repeats them. */
+.keynote-promo{padding-block:clamp(3rem,6vw,4.5rem);display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(1.75rem,4vw,3.5rem);align-items:center}
+@media (max-width:820px){.keynote-promo{grid-template-columns:1fr}.keynote-art{max-width:320px}}
+.keynote-art{margin:0;border:1px solid var(--hero-line);line-height:0}
+.keynote-art img{width:100%;height:auto;display:block}
+.keynote-promo .eyebrow{color:var(--hero-gold)}
+.keynote-promo h2{color:#fff;margin:.5rem 0 .75rem}
+.keynote-promo p{color:#D9CCE6;max-width:54ch}
+.keynote-promo .band-cta{margin-top:1.6rem}
+
 /* ---------- guests of honour ----------
    The speaker card's shape, but the portrait frame is a rounded rectangle
    rather than a disc: these are formal official portraits and a circular crop
@@ -897,6 +910,28 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
+
+<!-- The committee's own social card for the Saturday keynote, at a size worth
+     looking at rather than shrunk into an agenda cell. Sits straight after the
+     programme so it lands on a reader who has just seen the 11:00 am slot. The
+     artwork carries his name and title in its own typography, so the copy
+     beside it deliberately does not repeat them. -->
+<section class="band" id="keynote">
+  <div class="wrap keynote-promo">
+    <figure class="keynote-art rv">
+      <img src="img/keynote-abidali-neemuchwala.jpg" alt="Abidali Zainuddin Neemuchwala, Co-Founder and Director at Dallas Venture Capital &mdash; The Biz Connect, come hear him speak." loading="lazy" onerror="this.closest('figure').hidden=true">
+    </figure>
+    <div class="rv">
+      <p class="eyebrow">Saturday 11:00 am &middot; Opening keynote</p>
+      <h2>CEO Stories</h2>
+      <p>Prominent CEOs share their journeys and what they learned along the way &mdash; the weekend opens with the one session everybody in the room has a reason to be at.</p>
+      <div class="band-cta">
+        <a class="btn btn-gold" href="#register">Register to attend<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        <a class="btn btn-outline-gold" href="#programme">See the full agenda</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="sec" id="speakers">
   <div class="wrap">
     <div class="sec-head rv">
