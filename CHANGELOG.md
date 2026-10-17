@@ -25,6 +25,28 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Guests of honour get a section
+The five public officials were one sentence &mdash; "Also expected to attend:" &mdash;
+run together at the foot of the agenda. They now have a section of their own
+with a card each, following the brochure's page 2 ("Distinguished Guests of
+Honor"), which gives the two Congressmen a portrait and the honorific.
+
+**Portrait rights are not a question here, for once.** Both are official US
+House portraits &mdash; works of the federal government, so public domain. They
+were pulled out of the brochure PDF with `pdfimages` and its gold frame cropped
+off. New files: `img/guest-raja-krishnamoorthi.jpg`,
+`img/guest-jonathan-jackson.jpg`.
+
+The cards borrow the speaker card's shape but frame the portrait as a rounded
+rectangle rather than a disc: a circular crop cuts the composition of a formal
+portrait, and the different shape says "not a speaker" without a label. The
+three guests with no photograph fall back to initials on a tint, exactly as the
+speaker avatars do.
+
+**Still outstanding, and more pointed now there are faces:** none of these
+offices has been asked whether they are content to be named and pictured on a
+public page.
+
 ### The schedule shares one time axis
 The two days were independent stacks, so the hours did not line up. Saturday
 10am is a one-line open slot; Sunday 10am carries a four-speaker panel &mdash; so

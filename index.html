@@ -296,6 +296,26 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
+/* ---------- guests of honour ----------
+   The speaker card's shape, but the portrait frame is a rounded rectangle
+   rather than a disc: these are formal official portraits and a circular crop
+   cuts their composition, and the change of shape also says "not a speaker"
+   without needing a label. Three of the five have no photograph and fall back
+   to initials, exactly as the speaker avatars do. */
+.guest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1rem}
+.guest,.guest.no-photo{display:flex;align-items:center;gap:1.1rem;min-width:0;background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem}
+.guest-shot{position:relative;flex:none;width:84px;height:100px;border-radius:4px;overflow:hidden;background:var(--av-tint,var(--violet));color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.35rem;letter-spacing:.02em}
+.guest-shot::before{content:attr(data-i)}
+/* The portraits are shot head-and-shoulders with headroom; without this the
+   crop takes the top of the frame and cuts the chin. */
+.guest-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+/* No portrait: the initials panel does not need to be portrait-shaped. */
+.guest.no-photo .guest-shot{width:64px;height:64px;border-radius:50%;font-size:1.15rem}
+.guest-body{min-width:0}
+.guest-hon{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:.3rem}
+.guest h4{font-size:1.08rem;line-height:1.25}
+.guest-role{font-size:.84rem;color:var(--ink-2);line-height:1.4;margin-top:.25rem}
+
 /* ---------- speaker cards ----------
    Replaced .lineup / .lu — a strip of 88px discs with a name and session under
    each. It had nowhere for a title, so the only speaker with credentials had
@@ -634,6 +654,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <a href="#why">Why Attend</a>
       <a href="#programme">Programme</a>
       <a href="#speakers">Speakers</a>
+      <a href="#guests">Guests</a>
       <a href="#passes">Tickets</a>
       <a href="#venue">Venue</a>
       <a href="#faq">FAQ</a>
@@ -946,15 +967,34 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       </article>
     </div>
 
-    <div class="notice rv">
-      <svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg>
-      <span><strong>Also expected to attend:</strong> Dr. M. Anand Prakash, Consul General of India &middot; Zaman Mehdi, Consul General of Pakistan &middot; Congressman Jonathan Jackson, Illinois 1st District &middot; Congressman Raja Krishnamoorthi, Illinois 8th District &middot; John Curran, Illinois State Senator, 41st District.</span>
+  </div>
+</section>
+
+<!-- Guests of honour, from the 2026 brochure page 2. The two Congressmen have
+     their official US House portraits — works of the federal government, so
+     public domain — lifted from the brochure PDF with its gold frame cropped
+     off. The other three have no portrait and fall back to initials, exactly
+     as the speaker cards do. Replaced a single "Also expected to attend:"
+     notice that ran all five names together in one sentence. -->
+<section class="sec alt" id="guests">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Guests of honour</p>
+      <h2>Distinguished guests</h2>
+      <p>Meet the leaders bringing public service, enterprise and community progress to Biz Connect Chicago.</p>
+    </div>
+    <div class="guest-grid rv">
+      <article class="guest"><span class="guest-shot" data-i="RK" style="--av-tint:#8b4bbf"><img src="img/guest-raja-krishnamoorthi.jpg" alt="Raja Krishnamoorthi, U.S. Representative, Illinois&rsquo; 8th District" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><p class="guest-hon">The Honorable</p><h4>Raja Krishnamoorthi</h4><p class="guest-role">U.S. Representative, Illinois&rsquo; 8th District</p></div></article>
+      <article class="guest"><span class="guest-shot" data-i="JJ" style="--av-tint:#8b4bbf"><img src="img/guest-jonathan-jackson.jpg" alt="Jonathan L. Jackson, U.S. Representative, Illinois&rsquo; 1st District" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><p class="guest-hon">The Honorable</p><h4>Jonathan L. Jackson</h4><p class="guest-role">U.S. Representative, Illinois&rsquo; 1st District</p></div></article>
+      <article class="guest no-photo"><span class="guest-shot" data-i="AP" style="--av-tint:#8b4bbf"></span><div class="guest-body"><h4>Dr. M. Anand Prakash</h4><p class="guest-role">Consul General of India</p></div></article>
+      <article class="guest no-photo"><span class="guest-shot" data-i="ZM" style="--av-tint:#8b4bbf"></span><div class="guest-body"><h4>Zaman Mehdi</h4><p class="guest-role">Consul General of Pakistan</p></div></article>
+      <article class="guest no-photo"><span class="guest-shot" data-i="JC" style="--av-tint:#6b2f9e"></span><div class="guest-body"><h4>John Curran</h4><p class="guest-role">Illinois State Senator, 41st District</p></div></article>
     </div>
   </div>
 </section>
 
 
-<section class="sec alt" id="passes">
+<section class="sec" id="passes">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Registration</p>
@@ -990,7 +1030,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec" id="register">
+<section class="sec alt" id="register">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-edit"></use></svg>Complete your registration</p>
@@ -1022,7 +1062,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
 
 
-<section class="sec alt" id="venue">
+<section class="sec" id="venue">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">The Venue</p>
@@ -1093,7 +1133,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
 
 
-<section class="sec" id="faq">
+<section class="sec alt" id="faq">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Questions</p>
@@ -1120,7 +1160,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec alt" id="chicago">
+<section class="sec" id="chicago">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg> Around Chicago</p>
@@ -1346,6 +1386,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         <a href="#who">Who attends</a>
         <a href="#programme">Programme</a>
         <a href="#speakers">Speakers</a>
+        <a href="#guests">Guests</a>
         <a href="#venue">Venue</a>
       </div>
       <div>
