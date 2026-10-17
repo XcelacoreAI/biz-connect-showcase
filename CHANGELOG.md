@@ -25,6 +25,17 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The full agenda moves under the two day cards
+The timetable now sits inside the **Programme** section, directly beneath the 01
+Discover / 02 Grow cards and the line that introduces it &mdash; "Confirmed
+sessions and speakers are listed below." That sentence pointed at content two
+sections away; it now points at the thing immediately under it.
+
+**Speakers** keeps the portrait lineup and the "Also expected to attend" notice,
+and its intro no longer says sessions are listed below, because they are not &mdash;
+they are above. It describes the people instead, and the eyebrow drops "&amp;
+sessions" to match.
+
 ### The agenda gets a real heading
 "Full agenda, both days" was a 0.74rem uppercase label sitting between the lineup
 strip and the timetable, where it read as a caption on the portraits above rather
