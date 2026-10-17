@@ -328,8 +328,12 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .sess{background:var(--surface);border:1px solid var(--rule);box-shadow:var(--shadow);padding:1.1rem 1.2rem;margin-bottom:1rem}
 .sess-time{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.3rem}
 .sess h4{font-family:"Marcellus",serif;font-size:1.12rem;line-height:1.3;margin-bottom:.45rem}
-.sess.pending{background:transparent;border-style:dashed;box-shadow:none}
-.sess.pending h4{color:var(--ink-2)}
+.sess.keynote{background:linear-gradient(135deg,#2B1A3D 0%,#4A2470 100%);border-color:transparent;color:#F3ECF8}
+.sess.keynote h4{color:#fff;font-size:1.3rem}
+.sess.keynote .sess-time{color:var(--hero-gold)}
+.sess.keynote .sess-note{color:#D9CCE6}
+.sess.keynote .sess-tba{font-style:normal;margin-top:.8rem}
+.soon{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#2B1A3D;background:var(--hero-gold);padding:.3rem .7rem;border-radius:999px}
 .sess-tba{font-size:.84rem;color:var(--ink-3);font-style:italic;margin-top:.6rem}
 .sess-note{font-size:.88rem;color:var(--ink-2);margin-bottom:.7rem}
 .spk-row{display:flex;flex-wrap:wrap;gap:.65rem .9rem;margin-top:.7rem}
@@ -475,6 +479,14 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .notice a{color:var(--violet);font-weight:600}
 
 /* ---------- sponsor band ---------- */
+.glance{border-block:1px solid var(--gold-line)}
+.glance .wrap{padding-block:clamp(1.8rem,4vw,2.8rem)}
+.glance-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1.6rem 1.2rem}
+.glance-grid li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.25rem}
+.glance-grid .ic{color:var(--hero-gold);width:22px;height:22px;margin-bottom:.35rem}
+.glance-grid b{font-family:"Marcellus",serif;font-size:clamp(2rem,4.6vw,2.9rem);line-height:1;color:#fff}
+.g-l{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--hero-gold)}
+.g-s{font-size:.82rem;color:#C9B6D6;line-height:1.4}
 .band{background:var(--plum-deep);color:#F3EBF8;border-block:1px solid var(--gold-line)}
 .band-in{padding-block:clamp(3rem,6vw,4.5rem);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
 @media (max-width:820px){.band-in{grid-template-columns:1fr}}
@@ -636,6 +648,17 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </header>
 
+<section class="band glance">
+  <div class="wrap">
+    <ul class="glance-grid rv">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-calendar"></use></svg><b>2</b><span class="g-l">Days</span><span class="g-s">Saturday 5 &amp; Sunday 6 December</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>13</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>6</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg><b>$5</b><span class="g-l">Entry</span><span class="g-s">In advance &middot; $10 at the door</span></li>
+    </ul>
+  </div>
+</section>
+
 
 <section class="sec alt" id="who">
   <div class="wrap">
@@ -737,10 +760,11 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="sess-grid">
       <div class="sess-day">
         <p class="sess-dayhead">Saturday 5 December</p>
-      <article class="sess pending rv">
-        <p class="sess-time">11:00 am</p>
-        <h4>Keynote</h4>
-        <p class="sess-tba">Speaker and session to be announced.</p>
+      <article class="sess keynote rv">
+        <p class="sess-time">11:00 am &middot; Keynote</p>
+        <h4>CEO Stories</h4>
+        <p class="sess-note">Prominent CEOs on the journey, what it cost, and the mistakes they would tell you to skip.</p>
+        <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
       </article>
       <article class="sess rv">
         <p class="sess-time">12:00 pm</p>
@@ -780,10 +804,11 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
           <span class="spk"><span class="spk-av" data-i="AN"><img src="img/speaker-abdeali-nagarwala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Abdeali Nagarwala</span></span>
         </div>
       </article>
-      <article class="sess pending rv">
-        <p class="sess-time">11:00 am</p>
-        <h4>Keynote</h4>
-        <p class="sess-tba">Speaker and session to be announced.</p>
+      <article class="sess keynote rv">
+        <p class="sess-time">11:00 am &middot; Keynote</p>
+        <h4>Closing keynote</h4>
+        <p class="sess-note">The second of the two keynote sessions, closing out the weekend.</p>
+        <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
       </article>
       <article class="sess rv">
         <p class="sess-time">1:00 pm</p>

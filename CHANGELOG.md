@@ -25,6 +25,21 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Keynote cards, and an at-a-glance band
+The two keynote slots were dashed outlines reading "to be announced" &mdash; they
+looked like holes. They are now the strongest cards in the agenda: dark violet
+gradient, gold keynote label, and a gold "Speaker announced soon" pill. Saturday
+carries its real session theme from the schedule, **CEO Stories**, which is in the
+source and is not a person's name, so it publishes safely while the speaker is
+still marked TBD.
+
+A dark **at-a-glance band** sits under the hero: 2 days, 13 speakers, 6 sessions,
+$5 entry. Every figure is drawn from what the page already states. It breaks up a
+long run of text and puts the scale of the event above the fold-ish.
+
+Contrast checked on the new dark cards: 15.93:1 heading, 8.96:1 gold label and
+badge, 7.72:1 body. No horizontal overflow at 1280 or 375px.
+
 ### Speakers section leads with the people &mdash; and a contrast fix
 A lineup strip now opens the section: all thirteen named speakers as 88px
 portraits with their name and session beneath, before the timetable. The section
