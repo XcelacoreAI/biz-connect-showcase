@@ -25,6 +25,23 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Countdown replaced by the at-a-glance stats
+The hero's days/hours/minutes/seconds counter is gone, along with its script and
+CSS. A ticking clock seven weeks out is motion without information. The four
+stats &mdash; 2 days, 13 speakers, 6 sessions, $5 entry &mdash; now sit in its place,
+and the separate band below the hero is removed so the figures appear once.
+
+Two CSS notes for whoever edits this next:
+- `.glance-grid li` needs `min-width:0`, or grid cells refuse to shrink below
+  their content and the hero clips them.
+- The `.hero-stats` media query must sit **after** the base `.glance-grid` rule.
+  It was written before it, so it was dead &mdash; `auto-fit` happened to give the
+  right answer, which hid the mistake.
+
+Verified at a real 375px viewport: two columns, zero clipped cells, no document
+overflow. Headless screenshots below ~500px are misleading here (see Working
+notes in CLAUDE.md) &mdash; measure with a DOM probe instead.
+
 ### Keynote cards, and an at-a-glance band
 The two keynote slots were dashed outlines reading "to be announced" &mdash; they
 looked like holes. They are now the strongest cards in the agenda: dark violet
