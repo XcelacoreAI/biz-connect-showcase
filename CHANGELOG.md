@@ -25,6 +25,37 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The exhibitor floor, in the hero &mdash; and the 20 Oct agenda updates
+**80 exhibitors** now leads the at-a-glance stats, and a line under them says
+what kind of floor it is: eight industry pavilions, with a dedicated focus on
+manufacturing. An expo is judged on how many businesses are on the floor and
+the hero said nothing about it.
+
+Worded for **this** page's audience: the attendee version has no exhibitor form
+and no "Exhibit with us" CTA, so the floor is something to come and see &mdash;
+"two days to walk the floor and meet them" &mdash; not something to join. The
+Jamaat-facing page carries the same figure with an exhibitor CTA under it.
+
+"14 Hours / Of programme across the weekend" comes out to make room: the meta
+block two lines above already says "8:30am &ndash; 3:30pm both days", so the hours
+were stated twice within a screen.
+
+**80 is a committee figure.** Unlike the other three it derives from nothing on
+this page, so it cannot be checked here and will go stale unless someone updates
+it &mdash; in the stat and in the line, both marked.
+
+Carried across from the Jamaat site, which had them first:
+- Saturday 1pm is **"Selling to the Government: A Hands-On Workshop"**, with
+  **Ian Quan** of Apex Accelerator joining Hussain Ezzy, Fakhruddin Cutlerywala
+  and Huzaifa Hussain. Speakers 14 &rarr; 15.
+- **3pm on both days is "Raffles and Networking Bingo"**, so those two slots stop
+  being open. Sessions 6 &rarr; 8 &mdash; that figure is derived from the agenda and
+  has to be re-counted whenever a slot stops being open.
+- Portraits for **Saba Haider, Ian Quan**, and the three remaining guests of
+  honour &mdash; **Dr. M. Anand Prakash, Zaman Mehdi, John Curran**. Every guest
+  card now has a face.
+- Pending keynote reads "Speaker to be announced".
+
 ### The Saturday keynote gets a promo band, and Abidali a portrait
 The committee's own social card for the keynote now runs as a band straight
 after the programme, so it lands on a reader who has just passed the 11:00 am

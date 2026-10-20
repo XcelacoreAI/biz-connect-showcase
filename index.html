@@ -296,6 +296,14 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .day-theme{font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold-line);padding:.18rem .55rem;border-radius:2px;vertical-align:middle;margin-left:.7rem}
 .day-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .tag{font-size:.72rem;letter-spacing:.06em;padding:.3rem .7rem;border:1px solid var(--rule-strong);color:var(--ink-3);border-radius:2px}
+/* ---------- hero exhibitor line ----------
+   Under the at-a-glance stats, above the CTAs. A rule rather than a box: the
+   hero already carries a stat row and buttons, and a fourth bordered block
+   would crowd it. */
+.hero-floor{display:flex;align-items:flex-start;gap:.75rem;margin-top:1.9rem;padding-top:1.5rem;border-top:1px solid var(--hero-line);font-size:.95rem;line-height:1.55;color:var(--hero-ink-2);max-width:62ch}
+.hero-floor .ic{flex:none;color:var(--hero-gold);width:1.15rem;height:1.15rem;margin-top:.3rem}
+.hero-floor strong{color:var(--hero-ink);font-weight:600}
+
 /* ---------- keynote promo band ----------
    The committee's social card at a size worth looking at, beside the slot and
    the call to action. The artwork already carries his name and title in its
@@ -709,11 +717,22 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     </div>
 
     <ul class="glance-grid hero-stats rv">
-      <li><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg><b>14</b><span class="g-l">Hours</span><span class="g-s">Of programme across the weekend</span></li>
-      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>14</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
-      <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>6</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg><b>80</b><span class="g-l">Exhibitors</span><span class="g-s">Signed so far, more to come</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>15</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>8</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg><b>$5</b><span class="g-l">Entry</span><span class="g-s">In advance &middot; $10 at the door</span></li>
     </ul>
+
+    <!-- The exhibitor floor, in the hero. The stat row carries the count; this
+         says what the floor is made of. Worded for THIS page's audience: the
+         attendee version has no exhibitor form and no "Exhibit with us" CTA,
+         so the floor is something to come and see, not something to join.
+         80 is a committee figure — it derives from nothing on this page and
+         will go stale unless someone updates it here and in the stat above. -->
+    <p class="hero-floor rv">
+      <svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg>
+      <span><strong>80 exhibitors and more to come</strong>, across eight industry pavilions &mdash; with a dedicated focus on <strong>manufacturing</strong>. Two days to walk the floor and meet them.</span>
+    </p>
 
     <div class="hero-cta">
       <a class="btn btn-gold" href="#register">Register now<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
@@ -853,7 +872,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <article class="sess keynote rv">
         <p class="sess-when">Sunday 6 December</p>
         <p class="sess-time">Keynote</p>        <h4>Keynote</h4>
-        <p class="sess-tba"><span class="soon">Speaker announced soon</span></p>
+        <p class="sess-tba"><span class="soon">Speaker to be announced</span></p>
       </article>
       <p class="sched-hour">12:00 pm</p>
       <article class="sess rv">
@@ -868,12 +887,13 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       </article>
       <p class="sched-hour">1:00 pm</p>
       <article class="sess rv">
-        <p class="sess-when">Saturday 5 December</p>        <h4>Working with the Government: a practical workshop</h4>
-        <p class="sess-note">A hands-on workshop with <strong>APEX Accelerator</strong>: procurement opportunities, tender readiness, and the steps toward competing for government contracts.</p>
+        <p class="sess-when">Saturday 5 December</p>        <h4>Selling to the Government: A Hands-On Workshop</h4>
+        <p class="sess-note">Understand procurement opportunities, tips, guidelines, tender readiness and the steps toward competing for government contracts with Apex Accelerator (Ian Quan), Hussain Ezzy, Fakhruddin Cutlerywala and Huzaifa Hussain.</p>
         <div class="spk-row">
-          <span class="spk"><span class="spk-av" data-i="HE"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Ezzy</span></span>
-          <span class="spk"><span class="spk-av" data-i="FC"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Fakhruddin Cutlerywala</span></span>
-          <span class="spk"><span class="spk-av" data-i="HH"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Huzaifa Hussain</span></span>
+          <span class="spk"><span class="spk-av" data-i="IQ" style="--av-tint:#6b2f9e"><img src="img/speaker-ian-quan.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Ian Quan</span></span>
+          <span class="spk"><span class="spk-av" data-i="HE" style="--av-tint:#4a2470"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Hussain Ezzy</span></span>
+          <span class="spk"><span class="spk-av" data-i="FC" style="--av-tint:#8b4bbf"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Fakhruddin Cutlerywala</span></span>
+          <span class="spk"><span class="spk-av" data-i="HH" style="--av-tint:#6b2f9e"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="spk-n">Huzaifa Hussain</span></span>
         </div>
       </article>
       <article class="sess rv">
@@ -900,11 +920,13 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         </div>
       </article>
       <p class="sched-hour">3:00 pm</p>
-      <article class="sess open rv">
-        <p class="sess-when">Saturday 5 December</p>        <h4>Programme to be announced</h4>
+      <article class="sess rv">
+        <p class="sess-when">Saturday 5 December</p>        <h4>Raffles and Networking Bingo</h4>
+        <p class="sess-note">Prize raffles and the networking bingo challenge to close the day.</p>
       </article>
-      <article class="sess open rv">
-        <p class="sess-when">Sunday 6 December</p>        <h4>Programme to be announced</h4>
+      <article class="sess rv">
+        <p class="sess-when">Sunday 6 December</p>        <h4>Raffles and Networking Bingo</h4>
+        <p class="sess-note">Prize raffles and the networking bingo challenge to close the day.</p>
       </article>
     </div>
   </div>
@@ -969,35 +991,39 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
         <div class="spk-card-body"><h4>Abdeali Nagarwala</h4><p class="spk-session">AI in your business</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="HE" style="--av-tint:#6b2f9e"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
-        <div class="spk-card-body"><h4>Hussain Ezzy</h4><p class="spk-session">Working with Government</p></div>
+        <span class="spk-card-av" data-i="IQ" style="--av-tint:#6b2f9e"><img src="img/speaker-ian-quan.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Ian Quan</h4><p class="spk-session">Selling to the Government</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="FC" style="--av-tint:#4a2470"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
-        <div class="spk-card-body"><h4>Fakhruddin Cutlerywala</h4><p class="spk-session">Working with Government</p></div>
+        <span class="spk-card-av" data-i="HE" style="--av-tint:#4a2470"><img src="img/speaker-hussain-ezzy.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Hussain Ezzy</h4><p class="spk-session">Selling to the Government</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="HH" style="--av-tint:#8b4bbf"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
-        <div class="spk-card-body"><h4>Huzaifa Hussain</h4><p class="spk-session">Working with Government</p></div>
+        <span class="spk-card-av" data-i="FC" style="--av-tint:#8b4bbf"><img src="img/speaker-fakhruddin-cutlerywala.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Fakhruddin Cutlerywala</h4><p class="spk-session">Selling to the Government</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="TA" style="--av-tint:#6b2f9e"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <span class="spk-card-av" data-i="HH" style="--av-tint:#6b2f9e"><img src="img/speaker-huzaifa-hussain.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <div class="spk-card-body"><h4>Huzaifa Hussain</h4><p class="spk-session">Selling to the Government</p></div>
+      </article>
+      <article class="spk-card">
+        <span class="spk-card-av" data-i="TA" style="--av-tint:#4a2470"><img src="img/speaker-tasneem-talib-ali.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <div class="spk-card-body"><h4>Tasneem Talib Ali</h4><p class="spk-session">Sell Differently</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="TK" style="--av-tint:#4a2470"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <span class="spk-card-av" data-i="TK" style="--av-tint:#8b4bbf"><img src="img/speaker-tasneem-khokha.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <div class="spk-card-body"><h4>Tasneem Khokha</h4><p class="spk-session">Biz Lifecycle</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="MK" style="--av-tint:#8b4bbf"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <span class="spk-card-av" data-i="MK" style="--av-tint:#4a2470"><img src="img/speaker-mustaali-kanch.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <div class="spk-card-body"><h4>Mustaali Kanch</h4><p class="spk-session">Biz Lifecycle</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="MS" style="--av-tint:#6b2f9e"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <span class="spk-card-av" data-i="MS" style="--av-tint:#4a2470"><img src="img/speaker-mustansir-saifuddin.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <div class="spk-card-body"><h4>Mustansir Saifuddin</h4><p class="spk-session">Biz Lifecycle</p></div>
       </article>
       <article class="spk-card">
-        <span class="spk-card-av" data-i="HB" style="--av-tint:#4a2470"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
+        <span class="spk-card-av" data-i="HB" style="--av-tint:#8b4bbf"><img src="img/speaker-husaina-badshah.jpg" alt="" loading="lazy" onerror="this.remove()"></span>
         <div class="spk-card-body"><h4>Husaina Badshah</h4><p class="spk-session">Biz Lifecycle</p></div>
       </article>
     </div>
@@ -1021,9 +1047,9 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <div class="guest-grid rv">
       <article class="guest"><span class="guest-shot" data-i="RK" style="--av-tint:#8b4bbf"><img src="img/guest-raja-krishnamoorthi.jpg" alt="Raja Krishnamoorthi, U.S. Representative, Illinois&rsquo; 8th District" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><p class="guest-hon">The Honorable</p><h4>Raja Krishnamoorthi</h4><p class="guest-role">U.S. Representative, Illinois&rsquo; 8th District</p></div></article>
       <article class="guest"><span class="guest-shot" data-i="JJ" style="--av-tint:#8b4bbf"><img src="img/guest-jonathan-jackson.jpg" alt="Jonathan L. Jackson, U.S. Representative, Illinois&rsquo; 1st District" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><p class="guest-hon">The Honorable</p><h4>Jonathan L. Jackson</h4><p class="guest-role">U.S. Representative, Illinois&rsquo; 1st District</p></div></article>
-      <article class="guest no-photo"><span class="guest-shot" data-i="AP" style="--av-tint:#8b4bbf"></span><div class="guest-body"><h4>Dr. M. Anand Prakash</h4><p class="guest-role">Consul General of India</p></div></article>
-      <article class="guest no-photo"><span class="guest-shot" data-i="ZM" style="--av-tint:#8b4bbf"></span><div class="guest-body"><h4>Zaman Mehdi</h4><p class="guest-role">Consul General of Pakistan</p></div></article>
-      <article class="guest no-photo"><span class="guest-shot" data-i="JC" style="--av-tint:#6b2f9e"></span><div class="guest-body"><h4>John Curran</h4><p class="guest-role">Illinois State Senator, 41st District</p></div></article>
+      <article class="guest"><span class="guest-shot" data-i="AP" style="--av-tint:#8b4bbf"><img src="img/guest-anand-prakash.jpg" alt="Dr. M. Anand Prakash" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><h4>Dr. M. Anand Prakash</h4><p class="guest-role">Consul General of India</p></div></article>
+      <article class="guest"><span class="guest-shot" data-i="ZM" style="--av-tint:#8b4bbf"><img src="img/guest-zaman-mehdi.jpg" alt="Zaman Mehdi" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><h4>Zaman Mehdi</h4><p class="guest-role">Consul General of Pakistan</p></div></article>
+      <article class="guest"><span class="guest-shot" data-i="JC" style="--av-tint:#6b2f9e"><img src="img/guest-john-curran.jpg" alt="John Curran" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><h4>John Curran</h4><p class="guest-role">Illinois State Senator, 41st District</p></div></article>
     </div>
   </div>
 </section>
