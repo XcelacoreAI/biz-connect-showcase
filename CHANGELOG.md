@@ -25,6 +25,41 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Conversion pass on the hero
+Three changes aimed at one thing: more people registering.
+
+**A proof stack replaces the single exhibitor line.** Three rows, one reason
+each &mdash; the 80 exhibitors, the opening keynote (Abidali Neemuchwala, ex-CEO
+of Wipro), and the two Congressmen attending as guests of honour. Those names
+were the most persuasive thing on the page and they sat 55&ndash;60% down it, so
+a reader decided whether to register long before meeting them. Numbers persuade
+nobody; a former Wipro CEO and two sitting Congressmen do.
+
+**A deadline under the buttons.** The page had no urgency of any kind &mdash; no
+"closes", no "limited", no early-bird. The $5/$10 split already was an incentive
+and was never framed as one with a date.
+
+> **The date is a placeholder.** "3 December" was not set by anybody. Confirm it
+> or change it. If advance registration has no cut-off, drop the date and keep
+> "$5 in advance, $10 at the door", which is true today, rather than inventing
+> one.
+
+**The keynote band moved to directly after the hero**, from ~55% down. It is the
+only block that shows a face, names the draw and carries a Register button, and
+almost nobody was scrolling far enough to reach it. Section tints re-flipped
+through the rest of the page to keep the alternation.
+
+Checked for horizontal overflow at 500, 820 and 1280px: none. Not verified on a
+real handset &mdash; headless Chrome clamps the viewport at 500px, so anything
+narrower cannot be measured here.
+
+**Not addressed, and worth more than all of the above:** the registration form
+tells people to pay $5 in advance and gives them no way to do it &mdash; it has no
+payment field and the word "Zelle" does not appear on it, though the FAQ says
+the details are there. It also asks for ten required fields for a $5 ticket,
+three of which are city/state/country for a Chicagoland event. Both are in the
+JotForm account, not this repo.
+
 ### The exhibitor floor, in the hero &mdash; and the 20 Oct agenda updates
 **80 exhibitors** now leads the at-a-glance stats, and a line under them says
 what kind of floor it is: eight industry pavilions, with a dedicated focus on

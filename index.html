@@ -304,6 +304,18 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .hero-floor .ic{flex:none;color:var(--hero-gold);width:1.15rem;height:1.15rem;margin-top:.3rem}
 .hero-floor strong{color:var(--hero-ink);font-weight:600}
 
+/* ---------- hero proof stack + deadline ----------
+   Replaced a single .hero-floor line. Each row is one reason, one line, so the
+   block stays scannable at a glance rather than becoming a paragraph. */
+.hero-proof{list-style:none;margin:1.9rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--hero-line);display:flex;flex-direction:column;gap:.7rem;max-width:64ch}
+.hero-proof li{display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;line-height:1.5;color:var(--hero-ink-2)}
+.hero-proof .ic{flex:none;color:var(--hero-gold);width:1.15rem;height:1.15rem;margin-top:.25rem}
+.hero-proof strong{color:var(--hero-ink);font-weight:600}
+/* Sits under the buttons, where a reader has just decided whether to act. */
+.hero-deadline{display:flex;align-items:center;gap:.6rem;margin-top:1.1rem;font-size:.9rem;color:var(--hero-ink-2)}
+.hero-deadline .ic{flex:none;color:var(--hero-gold);width:1rem;height:1rem}
+.hero-deadline strong{color:var(--hero-gold);font-weight:600}
+
 /* ---------- keynote promo band ----------
    The committee's social card at a size worth looking at, beside the slot and
    the call to action. The artwork already carries his name and title in its
@@ -729,22 +741,75 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
          so the floor is something to come and see, not something to join.
          80 is a committee figure — it derives from nothing on this page and
          will go stale unless someone updates it here and in the stat above. -->
-    <p class="hero-floor rv">
-      <svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg>
-      <span><strong>80 exhibitors and more to come</strong>, across eight industry pavilions &mdash; with a dedicated focus on <strong>manufacturing</strong>. Two days to walk the floor and meet them.</span>
-    </p>
+    <!-- The proof stack. Three reasons to come, above the buttons, because the
+         names were the strongest thing on this page and they sat 55-60% down
+         it: a reader decided whether to register long before meeting them.
+         Numbers persuade nobody; "the former CEO of Wipro" and "two sitting
+         Congressmen" do. -->
+    <ul class="hero-proof rv">
+      <li>
+        <svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg>
+        <span><strong>80 exhibitors and more to come</strong>, across eight industry pavilions &mdash; with a dedicated focus on <strong>manufacturing</strong>.</span>
+      </li>
+      <li>
+        <svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg>
+        <span><strong>Opening keynote: Abidali Neemuchwala</strong> &mdash; Co-Founder and Director at Dallas Venture Capital, previously CEO and Managing Director of Wipro.</span>
+      </li>
+      <li>
+        <svg class="ic" aria-hidden="true"><use href="#i-star"></use></svg>
+        <span><strong>Guests of honour:</strong> Congressmen <strong>Raja Krishnamoorthi</strong> and <strong>Jonathan L. Jackson</strong>.</span>
+      </li>
+    </ul>
 
     <div class="hero-cta">
       <a class="btn btn-gold" href="#register">Register now<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
       <a class="btn btn-outline-gold" href="#who">Who it&rsquo;s for<svg class="ic" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
     </div>
+
+    <!-- The page had no urgency of any kind: no deadline, no "closes", no
+         limited anything. The $5/$10 split already IS an incentive and was
+         never framed as one with a date.
+         TODO(committee): 3 December is a PLACEHOLDER — nobody has set this
+         date. Confirm it or change it before this ships. If advance
+         registration has no cut-off, say "$5 in advance, $10 at the door"
+         and drop the date rather than inventing one. -->
+    <p class="hero-deadline rv">
+      <svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg>
+      <span>Advance registration closes <strong>3 December</strong> &mdash; <strong>$5</strong> now, <strong>$10</strong> at the door.</span>
+    </p>
   </div>
 </header>
+
+<!-- MOVED here from after the programme. It was at ~55% of the page: a
+     reader decided whether to register long before reaching the one block
+     that shows a face, names the draw and carries a Register button. It is
+     now the first thing after the hero. -->
+<!-- The committee's own social card for the Saturday keynote, at a size worth
+     looking at rather than shrunk into an agenda cell. Sits straight after the
+     programme so it lands on a reader who has just seen the 11:00 am slot. The
+     artwork carries his name and title in its own typography, so the copy
+     beside it deliberately does not repeat them. -->
+<section class="band" id="keynote">
+  <div class="wrap keynote-promo">
+    <figure class="keynote-art rv">
+      <img src="img/keynote-abidali-neemuchwala.jpg" alt="Abidali Zainuddin Neemuchwala, Co-Founder and Director at Dallas Venture Capital &mdash; The Biz Connect, come hear him speak." loading="lazy" onerror="this.closest('figure').hidden=true">
+    </figure>
+    <div class="rv">
+      <p class="eyebrow">Saturday 11:00 am &middot; Opening keynote</p>
+      <h2>CEO Stories</h2>
+      <p>Prominent CEOs share their journeys and what they learned along the way &mdash; the weekend opens with the one session everybody in the room has a reason to be at.</p>
+      <div class="band-cta">
+        <a class="btn btn-gold" href="#register">Register to attend<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        <a class="btn btn-outline-gold" href="#programme">See the full agenda</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Six roles and the reason each is in the room, from the committee's 2026
      brochure ("Who you'll meet · Every seat has a purpose"). Replaced twelve
      generic chips that named audiences without saying why any was there. -->
-<section class="sec alt" id="who">
+<section class="sec" id="who">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Who attends</p>
@@ -765,7 +830,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 <!-- The eight reasons from the same brochure, page 3. The seventh is titled
      "Manufacturing" there but its body describes CEO Stories, the Saturday
      keynote; the body is unambiguous, so it is titled CEO Stories here. -->
-<section class="sec" id="why">
+<section class="sec alt" id="why">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">What&rsquo;s in it for you</p>
@@ -786,7 +851,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 </section>
 
 
-<section class="sec alt" id="programme">
+<section class="sec" id="programme">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Programme</p>
@@ -932,29 +997,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-
-<!-- The committee's own social card for the Saturday keynote, at a size worth
-     looking at rather than shrunk into an agenda cell. Sits straight after the
-     programme so it lands on a reader who has just seen the 11:00 am slot. The
-     artwork carries his name and title in its own typography, so the copy
-     beside it deliberately does not repeat them. -->
-<section class="band" id="keynote">
-  <div class="wrap keynote-promo">
-    <figure class="keynote-art rv">
-      <img src="img/keynote-abidali-neemuchwala.jpg" alt="Abidali Zainuddin Neemuchwala, Co-Founder and Director at Dallas Venture Capital &mdash; The Biz Connect, come hear him speak." loading="lazy" onerror="this.closest('figure').hidden=true">
-    </figure>
-    <div class="rv">
-      <p class="eyebrow">Saturday 11:00 am &middot; Opening keynote</p>
-      <h2>CEO Stories</h2>
-      <p>Prominent CEOs share their journeys and what they learned along the way &mdash; the weekend opens with the one session everybody in the room has a reason to be at.</p>
-      <div class="band-cta">
-        <a class="btn btn-gold" href="#register">Register to attend<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
-        <a class="btn btn-outline-gold" href="#programme">See the full agenda</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="sec" id="speakers">
+<section class="sec alt" id="speakers">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Speakers</p>
@@ -1037,7 +1080,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
      off. The other three have no portrait and fall back to initials, exactly
      as the speaker cards do. Replaced a single "Also expected to attend:"
      notice that ran all five names together in one sentence. -->
-<section class="sec alt" id="guests">
+<section class="sec" id="guests">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Guests of honour</p>
@@ -1055,7 +1098,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 </section>
 
 
-<section class="sec" id="passes">
+<section class="sec alt" id="passes">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Registration</p>
@@ -1091,7 +1134,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec alt" id="register">
+<section class="sec" id="register">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-edit"></use></svg>Complete your registration</p>
@@ -1123,7 +1166,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
 
 
-<section class="sec" id="venue">
+<section class="sec alt" id="venue">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">The Venue</p>
@@ -1194,7 +1237,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
 
 
 
-<section class="sec alt" id="faq">
+<section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow">Questions</p>
@@ -1221,7 +1264,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
   </div>
 </section>
 
-<section class="sec" id="chicago">
+<section class="sec alt" id="chicago">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg> Around Chicago</p>
