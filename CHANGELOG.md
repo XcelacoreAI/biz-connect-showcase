@@ -48,6 +48,13 @@ until a larger file arrives. The three guests of honour who were on initials
 House portraits. Saba Haider's cut-out arrived on solid black; the background
 was flood-filled to a pale lavender so the circle has no dark corners.
 
+### Abidali Neemuchwala's title
+The two-clause title under the keynote speaker ("Co-Founder and Director,
+Dallas Venture Capital; previously CEO and Managing Director, Wipro") becomes
+**Tech Investor and Ex-CEO Wipro**, the committee's wording, on his agenda
+avatar and his speaker card. The promo band's alt text still describes the
+artwork, which carries its own title line.
+
 ### Sunday keynote badge
 "Speaker announced soon" becomes **"Speaker to be announced"**.
 
