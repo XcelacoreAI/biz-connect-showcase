@@ -25,6 +25,35 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Entry is free, pre-registration required
+The committee made attendee entry free on 21 October. Every "$5 in advance,
+$10 at the door" reference on this site is gone, replaced by free entry stated
+alongside the condition that attends it.
+
+**Both halves, every time.** "Free" on its own reads as walk-up, which is
+exactly what pre-registration exists to prevent, so the requirement travels
+with the price everywhere it appears: the hero glance tile (now **Free /
+Entry / Pre-registration required**), the hero deadline line, the Attendee
+price block, the registration lede, the form note, and the "How do I register?"
+answer.
+
+**Zelle is gone from the page.** The registration lede said "Payment is $5 by
+Zelle"; it now says there is nothing to pay but everyone attending must
+register. The form note promised confirmation "once payment is received" and
+now promises it once the form is in.
+
+**The JotForm still contradicts this.** The embedded attendee form at
+`form.jotform.com/262430125585151` continues to state a fee and ask for Zelle
+payment to `tr@chicagojamaat.org`. That lives on JotForm, not in this
+repository, and has to be changed there. Until it is, a reader is told entry is
+free and then asked to pay — the single most damaging thing currently on the
+site.
+
+`exhibitors.html` was not touched: it carries no attendee price block, and it
+is already well behind `index.html`.
+
+Deploy: copy `index.html`. Nothing else changed.
+
 ### Conversion pass on the hero
 Three changes aimed at one thing: more people registering.
 

@@ -14,7 +14,7 @@ when Friday 4 December was dropped; see CHANGELOG.md.
 | Presented by | Anjuman-e-Saifee Chicago, with Al-Tijaarat al-Raabehah Chicago |
 | Dates | 5–6 December 2026 · 26–27 Jamadul Ukhra 1448 |
 | Venue | Compass Arena, 625 Joliet Road, Willowbrook, IL 60527 |
-| Registration | Two forms. Attendees: https://form.jotform.com/262430125585151 (embedded on `index.html`) &mdash; $5 in advance by Zelle to `tr@chicagojamaat.org`, $10 at the door, over-16s only. Exhibitors: https://form.jotform.com/261984324758066, a Vendor Interest Form with booth pricing $350&ndash;$950 (embedded on `exhibitors.html`). |
+| Registration | Two forms. Attendees: https://form.jotform.com/262430125585151 (embedded on `index.html`) &mdash; entry is **free** as of 2026-10-21, pre-registration required, over-16s only. **The form itself still says $5 by Zelle to `tr@chicagojamaat.org` &mdash; see blocker 1.** Exhibitors: https://form.jotform.com/261984324758066, a Vendor Interest Form with booth pricing $350&ndash;$950 (embedded on `exhibitors.html`). |
 | Audience | Dawoodi Bohra business community, North America |
 
 Origin: Aqa Moula (TUS) delivered Mawaaiz Nooraniyah on *Tijaarat Hunar* during
@@ -92,6 +92,13 @@ template needs no changes. Force it with `<html class="embedded">`.
 
 ## Outstanding — blockers first
 
+1. **The attendee JotForm still charges $5.** The committee made entry free on
+   2026-10-21 and both websites now say so, but the embedded form continues to
+   state the fee and ask for Zelle payment to `tr@chicagojamaat.org`. A reader
+   is told entry is free and is then asked to pay, on the same screen. The form
+   lives on JotForm and cannot be fixed from this repository &mdash; someone with
+   the JotForm login has to edit it. This is the most damaging thing currently
+   live on the site.
 1. **Enforce HTTPS is off** in repo Settings &rarr; Pages, so `http://` serves the
    site instead of redirecting. Needs repo **admin** &mdash; a Write collaborator gets
    HTTP 404 from the API. Also, the `_github-pages-challenge-fatimasoni-jamaat`
