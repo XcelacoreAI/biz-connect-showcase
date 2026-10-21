@@ -48,6 +48,14 @@ until a larger file arrives. The three guests of honour who were on initials
 House portraits. Saba Haider's cut-out arrived on solid black; the background
 was flood-filled to a pale lavender so the circle has no dark corners.
 
+### Ticket prices removed
+Every attendee price is gone at the committee's request: the "$5 Entry" hero
+tile (three tiles remain), the "$5 / $10 at the door" line on the Attendee
+card, the "Payment is $5 by Zelle" lede on the registration form, and the
+figures in the "How do I register?" FAQ. "Confirmation by email once payment
+is received" becomes "Confirmation by email". **The attendee JotForm still
+states $5 and the Zelle details** &mdash; that has to change on JotForm itself.
+
 ### Abidali Neemuchwala's title
 The two-clause title under the keynote speaker ("Co-Founder and Director,
 Dallas Venture Capital; previously CEO and Managing Director, Wipro") becomes
