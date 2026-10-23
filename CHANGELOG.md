@@ -25,6 +25,31 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Four more exhibitor logos and links
+**Shirin Marvi Real Estate** supplied a business card — which beats both routes
+used so far, since she registered with a Gmail address and neither the email
+domain nor a name search would have found her. The logo is cropped out of the
+card; the card also carried a phone number and a personal Gmail, and neither
+belongs on a public page, so the crop stops above them and the card itself is
+not committed.
+
+**Ezzy Associates** publishes `logo-lockup-black.svg` — a dark lockup meant for
+light backgrounds, which is exactly what this grid needs and rarer than it
+should be.
+
+**Royal Cyber** gets a link but no logo. The site sits behind a Cloudflare
+challenge that returns 403 to anything without a browser session, so it cannot
+be read programmatically at all; the URL is the committee's and resolves for a
+human, but unlike every other entry it could not be confirmed from here.
+
+**Smooth Solutions Medspa** gets a link but no logo. Their only web logo is
+white-on-transparent and ships as an inline SVG sprite icon rather than a file,
+so there is nothing to put on a white card — the Kettle & Oak trap again,
+without a dark variant to fall back on.
+
+The section now carries **12 logos and 14 links**.
+Deploy: copy `index.html` and `img/`.
+
 ### The exhibitor floor goes on the page
 This page has claimed "80 exhibitors and more to come, across eight industry
 pavilions" and "Eight focused zones" since launch, and then showed neither.
