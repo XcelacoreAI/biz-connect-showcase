@@ -25,6 +25,30 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Royal Cyber's logo, and Xcelacore AI joins the floor
+**Royal Cyber** now has its logo. It had to be supplied as a file: the site
+sits behind a Cloudflare challenge that returns 403 to anything without a
+browser session, so it cannot be read programmatically. The SVG is a single
+path filled `#003863`, a dark navy drawn for light backgrounds, so it needed
+none of the handling Kettle & Oak and Smooth Solutions did.
+
+**Xcelacore AI** is added at Mansoor's request, and is published **against its
+status in the committee's sheet** — that row reads "Contacted n wtg" as of the
+23 October export, a lead rather than a confirmed exhibitor. It goes in as a
+declared override in the import script rather than a hand-edit here, which the
+next import would silently undo, and every run now prints `PUBLISHED AGAINST
+SHEET STATUS` naming the business and the sheet's own wording. **The real fix
+is updating the sheet**; when that row says "Confirmed not paid" the override
+should be deleted and the import will pick it up by itself.
+
+Its pavilion comes from the sheet's own industry column — Technology &
+Innovation, which takes that pavilion from 8 to 9 and the floor from **53 to
+54**. The hero tile and proof bullet follow.
+
+The section now carries **14 logos and 15 links**.
+
+Deploy: copy `index.html` and `img/`.
+
 ### Four more exhibitor logos and links
 **Shirin Marvi Real Estate** supplied a business card — which beats both routes
 used so far, since she registered with a Gmail address and neither the email
