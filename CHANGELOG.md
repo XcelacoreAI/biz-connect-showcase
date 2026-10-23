@@ -25,6 +25,19 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Abidali Neemuchwala is "Tech Investor and Ex-CEO Wipro" everywhere
+He carried two different titles on this page. The hero proof bullet, the
+keynote image alt text, the speaker row and the speaker card all described him
+as "Co-Founder and Director at Dallas Venture Capital, previously CEO and
+Managing Director of Wipro"; the Jamaat-portal version had already been
+shortened to **Tech Investor and Ex-CEO Wipro**. All four now use the short
+form, so the two sites agree and the page no longer contradicts itself.
+
+The short form is also the stronger one in the hero: "Ex-CEO Wipro" is the
+claim that persuades, and it was buried at the end of a 17-word title.
+
+Deploy: copy `index.html`. Nothing else changed.
+
 ### Entry is free, pre-registration required
 The committee made attendee entry free on 21 October. Every "$5 in advance,
 $10 at the door" reference on this site is gone, replaced by free entry stated
