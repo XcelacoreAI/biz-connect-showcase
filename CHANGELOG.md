@@ -45,9 +45,23 @@ Creative Services 1. The strip doubles as a filter — 53 cards is past what is
 browsable on a phone, and the counts are the thing the committee asked to
 highlight, so one control does both jobs.
 
-**No logo is required for a card to look finished.** Each shows a monogram on a
-tinted rounded square; dropping `img/exhibitor-<slug>.png` in replaces it, the
-same way the speaker portraits work. No logos have been collected yet.
+**Ten real logos, and a slot shaped to hold them.** They come from the
+exhibitors' own websites, and the sheet's email column is what makes them
+attributable — 15 of the 53 gave a company-domain address, so the business and
+the site are linked by their own data rather than by a name search. The other
+38 use Gmail or Yahoo, and guessing from a name like WOLF, AMAZ or Tip Top
+risks putting the wrong company's logo on the page. Those keep a monogram.
+
+Logos get a **wide** slot, 96×52, because company logos are overwhelmingly
+wordmarks and a wordmark letterboxed into a square comes out a few pixels tall
+— BluPencil Consulting and SBS America were unreadable at 52×52. The monogram
+keeps its square, so the grid only changes shape where there is a logo, and the
+monogram stays underneath so a missing file uncovers letters rather than an
+empty box.
+
+Which card gets which is decided at import, not in the browser: the script
+looks for `img/exhibitor-<slug>.{svg,png,jpg,jpeg,webp}`. **Dropping a logo
+into `img/` is no longer enough on its own — re-run the script.**
 
 **The cards are generated, not hand-written.** Everything between the
 `EXHIBITORS` markers comes from the sheet via
