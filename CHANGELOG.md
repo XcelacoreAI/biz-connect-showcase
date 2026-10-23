@@ -25,6 +25,18 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Shirin Marvi Real Estate gets its logo and website
+Supplied by the exhibitor as a business card, which beats both routes used so
+far — she registered with a Gmail address, so neither the email domain nor a
+name search would have found her. The logo is cropped out of the card; the card
+also carried a phone number and a personal Gmail, and neither belongs on a
+public page, so the crop stops above them and the card itself is not committed.
+
+`shirinmarvi.com` resolves and canonicalises to `www`, which is the form
+stored. Takes the section to 11 logos and 11 links.
+
+Deploy: copy `index.html` and `img/`.
+
 ### The exhibitor floor goes on the page
 This page has claimed "80 exhibitors and more to come, across eight industry
 pavilions" and "Eight focused zones" since launch, and then showed neither.
