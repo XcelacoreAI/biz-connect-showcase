@@ -25,6 +25,25 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Xcelacore AI's description, and links for Emrixtech and Cysora
+**Xcelacore AI** gets a description — the company's own wording, supplied by
+its owner, so it is the one blurb on this page that is not a neutral summary
+written for it.
+
+**Emrixtech** and **Cysora** get links but no logos, for reasons worth
+recording so nobody re-attempts them:
+
+- Emrixtech's header logo (`Asset-10.svg`, lazy-loaded behind a base64
+  placeholder) is a partial asset that renders as a bare orange "x" on its own
+  — a broken image rather than a mark.
+- Every logo image on Cysora's homepage belongs to a **client** of theirs
+  (burhani, panxpan, siimgroup, zeloop). Taking one would put another company's
+  mark on Cysora's card, which is the worst outcome available here.
+
+**19 blurbs, 14 logos, 17 links** across 54 exhibitors.
+
+Deploy: copy `index.html`.
+
 ### Royal Cyber's logo, and Xcelacore AI joins the floor
 **Royal Cyber** now has its logo. It had to be supplied as a file: the site
 sits behind a Cloudflare challenge that returns 403 to anything without a
