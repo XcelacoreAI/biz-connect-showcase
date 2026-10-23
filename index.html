@@ -365,6 +365,50 @@ section{scroll-margin-top:calc(var(--parent-nav-h) + 78px)}
 .spk-card-av{position:relative;flex:none;width:64px;height:64px;border-radius:50%;background:var(--av-tint,var(--violet));color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.15rem;letter-spacing:.02em;overflow:hidden}
 .spk-card-av::before{content:attr(data-i)}
 .spk-card-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* the exhibitor floor. The cards and chips between the EXHIBITORS markers in
+   the body are generated from the committee's sheet — these styles, and the
+   filter script at the end of the file, are hand-written and are not. */
+.exh-lede{color:var(--ink-2);max-width:62ch;margin-bottom:1.6rem}
+.exh-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.exh-chip{display:inline-flex;align-items:center;gap:.45rem;font:inherit;font-size:.82rem;line-height:1;color:var(--ink-2);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:.5rem .85rem;cursor:pointer;transition:border-color .15s ease,color .15s ease,background .15s ease}
+.exh-chip:hover{border-color:var(--rule-strong);color:var(--ink)}
+.exh-chip.on{background:var(--violet);border-color:var(--violet);color:var(--on-violet)}
+.exh-n{font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;background:var(--violet-soft);color:var(--violet);border-radius:999px;padding:.15rem .4rem;min-width:1.5rem;text-align:center}
+.exh-chip.on .exh-n{background:rgba(255,255,255,.22);color:var(--on-violet)}
+/* align-items:start — only some exhibitors have a description, and stretching
+   leaves a hole under every card sharing a row with a wordy neighbour. */
+.exh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr));gap:.9rem;align-items:start}
+.exh-card{display:flex;align-items:flex-start;gap:.85rem;min-width:0;background:var(--surface);border:1px solid var(--rule);padding:.95rem 1rem}
+.exh-card[hidden]{display:none}
+.exh-body{min-width:0}
+.exh-card h4{font-size:1rem;line-height:1.25;overflow-wrap:anywhere}
+.exh-pav{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-top:.35rem}
+.exh-blurb{font-size:.82rem;color:var(--ink-2);line-height:1.45;margin-top:.5rem}
+/* rounded rectangle, not the speakers' disc: logos are rectangular, and the
+   different shape says "company, not person" without a label. */
+.exh-mark{position:relative;flex:none;width:52px;height:52px;border-radius:8px;background:var(--av-tint,var(--violet));color:var(--on-violet);display:grid;place-items:center;font-family:"Marcellus",serif;font-size:1.05rem;letter-spacing:.02em;overflow:hidden}
+/* logos get a wide slot: company logos are overwhelmingly wordmarks, and a
+   wordmark letterboxed into a square ends up unreadable. Only cards with an
+   actual logo file get .wide — the monogram keeps its square. */
+.exh-mark.wide{width:96px;height:52px;background:var(--surface);border:1px solid var(--rule)}
+/* contain, not cover: a logo cropped to fill is a logo with its edges cut off */
+.exh-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5px;box-sizing:border-box;background:var(--surface)}
+.exh-foot{margin-top:1.4rem;font-size:.8rem;color:var(--ink-3)}
+/* Only the ~10 exhibitors whose own email domain identifies them carry a link,
+   so the underline has to be the thing that marks a card as clickable — the
+   rest look identical and are not. */
+.exh-link{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule-strong);transition:border-color .15s ease,color .15s ease}
+.exh-link:hover{color:var(--violet);border-bottom-color:var(--violet)}
+.exh-link .ic{width:.68em;height:.68em;margin-left:.3em;vertical-align:baseline;opacity:.55}
+.exh-mark-link{display:block;flex:none}
+.exh-mark-link:hover .exh-mark{border-color:var(--rule-strong)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:560px){
+  .exh-grid{grid-template-columns:1fr}
+  .exh-mark{width:44px;height:44px;font-size:.9rem}
+  .exh-mark.wide{width:84px;height:44px}
+}
 /* The headline booking takes the full first row. */
 .spk-card.key{grid-column:1/-1;gap:1.3rem;padding:1.4rem 1.5rem;border-color:var(--gold-line);box-shadow:var(--shadow)}
 .spk-card.key .spk-card-av{width:96px;height:96px;font-size:1.7rem}
@@ -684,6 +728,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <div class="nav-links" id="navLinks">
       <a href="#who">Who Attends</a>
+      <a href="#exhibitors">Exhibitors</a>
       <a href="#why">Why Attend</a>
       <a href="#programme">Programme</a>
       <a href="#speakers">Speakers</a>
@@ -729,7 +774,12 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     </div>
 
     <ul class="glance-grid hero-stats rv">
-      <li><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg><b>80</b><span class="g-l">Exhibitors</span><span class="g-s">Signed so far, more to come</span></li>
+      <!-- 53 is the number of cards in the #exhibitors section below, i.e. the
+           rows the committee's sheet marks Paid or Confirmed-not-paid. It said
+           80 until 23 Oct, which no longer survived putting the actual floor on
+           the page. The import script prints this count every run — keep both
+           this tile and the proof bullet below in step with it. -->
+      <li><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg><b>53</b><span class="g-l">Exhibitors</span><span class="g-s">Signed so far, more to come</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><b>15</b><span class="g-l">Speakers</span><span class="g-s">Confirmed so far, more to come</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg><b>8</b><span class="g-l">Sessions</span><span class="g-s">Plus two keynotes</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-ticket"></use></svg><b>Free</b><span class="g-l">Entry</span><span class="g-s">Pre-registration required</span></li>
@@ -749,7 +799,7 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     <ul class="hero-proof rv">
       <li>
         <svg class="ic" aria-hidden="true"><use href="#i-factory"></use></svg>
-        <span><strong>80 exhibitors and more to come</strong>, across eight industry pavilions &mdash; with a dedicated focus on <strong>manufacturing</strong>.</span>
+        <span><strong>53 exhibitors and more to come</strong>, across eight industry pavilions &mdash; with a dedicated focus on <strong>manufacturing</strong>.</span>
       </li>
       <li>
         <svg class="ic" aria-hidden="true"><use href="#i-mic"></use></svg>
@@ -1096,6 +1146,102 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
       <article class="guest"><span class="guest-shot" data-i="ZM" style="--av-tint:#8b4bbf"><img src="img/guest-zaman-mehdi.jpg" alt="Zaman Mehdi" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><h4>Zaman Mehdi</h4><p class="guest-role">Consul General of Pakistan</p></div></article>
       <article class="guest"><span class="guest-shot" data-i="JC" style="--av-tint:#6b2f9e"><img src="img/guest-john-curran.jpg" alt="John Curran" loading="lazy" onerror="this.remove()"></span><div class="guest-body"><h4>John Curran</h4><p class="guest-role">Illinois State Senator, 41st District</p></div></article>
     </div>
+  </div>
+</section>
+
+
+<!-- ---------- the exhibitor floor ----------
+     Sits above the registration choice because the hero's lead proof point is
+     the exhibitor floor, and until now this page claimed 80 exhibitors across
+     eight pavilions and never showed one of them or named a single pavilion.
+
+     Everything between the EXHIBITORS markers is GENERATED from the committee's
+     sheet. Do not hand-edit it — the next import silently overwrites it:
+
+       cd <tr-react-app>
+       node scripts/build-exhibitors.mjs "<sheet>.csv" --html <this file>
+
+     Corrections to a company's name or description go in that script, in
+     NAME_OVERRIDES and BLURBS, so they survive the next export. -->
+<section class="sec" id="exhibitors">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-store"></use></svg>Exhibitors</p>
+      <h2>Who is on the floor</h2>
+    </div>
+    <!-- EXHIBITORS:START — generated by tr-react-app/scripts/build-exhibitors.mjs -->
+      <p class="exh-lede">53 businesses confirmed so far, across eight industry pavilions. More are being added as the committee confirms them &mdash; pick a pavilion to see who is in it.</p>
+
+      <div class="exh-filter" role="group" aria-label="Filter exhibitors by pavilion">
+        <button type="button" class="exh-chip on" aria-pressed="true" data-pav="">All pavilions <span class="exh-n">53</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Food &amp; Hospitality">Food &amp; Hospitality <span class="exh-n">12</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Retail &amp; Consumer Goods">Retail &amp; Consumer Goods <span class="exh-n">8</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Technology &amp; Innovation">Technology &amp; Innovation <span class="exh-n">8</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Manufacturing">Manufacturing <span class="exh-n">7</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Professional Services">Professional Services <span class="exh-n">7</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Real Estate &amp; Construction">Real Estate &amp; Construction <span class="exh-n">7</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Healthcare &amp; Wellness">Healthcare &amp; Wellness <span class="exh-n">3</span></button>
+        <button type="button" class="exh-chip" aria-pressed="false" data-pav="Creative Services">Creative Services <span class="exh-n">1</span></button>
+      </div>
+
+      <div class="exh-grid">
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">5J</span><div class="exh-body"><h4>53 Jewels</h4><p class="exh-pav">Retail &amp; Consumer Goods</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">AL</span><div class="exh-body"><h4>Alwaan</h4><p class="exh-pav">Food &amp; Hospitality</p><p class="exh-blurb">A Chicago food business of twenty years' standing.</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">AM</span><div class="exh-body"><h4>AMAZ</h4><p class="exh-pav">Technology &amp; Innovation</p><p class="exh-blurb">Networking and cybersecurity services.</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><a class="exh-mark-link" href="https://blupencilconsulting.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#6b2f9e">BC<img src="img/exhibitor-blupencil-consulting.jpg" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://blupencilconsulting.com/" target="_blank" rel="noopener noreferrer">BluPencil Consulting<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">BA</span><div class="exh-body"><h4>Bohri &amp; Associates</h4><p class="exh-pav">Professional Services</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">BP</span><div class="exh-body"><h4>Broad Peak Systems Inc</h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><a class="exh-mark-link" href="https://ciggarment.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#6b2f9e">CG<img src="img/exhibitor-cig-garment-manufacturing.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://ciggarment.com/" target="_blank" rel="noopener noreferrer">CIG Garment Manufacturing<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">Customised garment manufacturing — hoodies, sweatshirts, sweatpants, polo shirts — knitting its own fabric in Toronto.</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">CC</span><div class="exh-body"><h4>Crescent Consultants</h4><p class="exh-pav">Professional Services</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">CY</span><div class="exh-body"><h4>Cysora</h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">EI</span><div class="exh-body"><h4>Emrixtech Inc</h4><p class="exh-pav">Professional Services</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">EA</span><div class="exh-body"><h4>Ezzy Associates</h4><p class="exh-pav">Professional Services</p></div></article>
+        <article class="exh-card" data-pav="Creative Services"><a class="exh-mark-link" href="https://www.thedetroitdigital.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#8b4bbf">FB<img src="img/exhibitor-fakhri-business-solutions-dba-detroit-digital-marketing.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://www.thedetroitdigital.com/" target="_blank" rel="noopener noreferrer">Fakhri Business Solutions dba Detroit Digital Marketing<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Creative Services</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">FJ</span><div class="exh-body"><h4>Faya Jewels</h4><p class="exh-pav">Retail &amp; Consumer Goods</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">FC</span><div class="exh-body"><h4>Floor Chem Inc</h4><p class="exh-pav">Manufacturing</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">GH</span><div class="exh-body"><h4>Greenback Holdings Inc.</h4><p class="exh-pav">Professional Services</p><p class="exh-blurb">A business web app, launching soon.</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">HA</span><div class="exh-body"><h4>HarborTechAI</h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">HO</span><div class="exh-body"><h4>HAZWOPER OSHA Training</h4><p class="exh-pav">Professional Services</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">HS</span><div class="exh-body"><h4>Hilal Software Corporation</h4><p class="exh-pav">Technology &amp; Innovation</p><p class="exh-blurb">Business automation built on AI.</p></div></article>
+        <article class="exh-card" data-pav="Healthcare &amp; Wellness"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">IS</span><div class="exh-body"><h4>iThink Solutions</h4><p class="exh-pav">Healthcare &amp; Wellness</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">JK</span><div class="exh-body"><h4>Jamali Kitchen</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">JK</span><div class="exh-body"><h4>Jamali Kopy Kat Printing</h4><p class="exh-pav">Retail &amp; Consumer Goods</p><p class="exh-blurb">A family-owned printing company in Bellwood, established in 1973 and serving businesses across the area for over fifty years.</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">KS</span><div class="exh-body"><h4>Kapasi’s Kupcakes</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><a class="exh-mark-link" href="https://kettleandoak.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#4a2470">KO<img src="img/exhibitor-kettle-oak.svg" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://kettleandoak.com/" target="_blank" rel="noopener noreferrer">Kettle &amp; Oak<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Real Estate &amp; Construction</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">KB</span><div class="exh-body"><h4>Kings Bathroom and Kitchen</h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">Full home renovation, and kitchen cabinets manufactured in house.</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">LS</span><div class="exh-body"><h4>LSS Sweet and Spicy</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">MC</span><div class="exh-body"><h4>Maaeidaah Catering</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">MC</span><div class="exh-body"><h4>Majma Cafe</h4><p class="exh-pav">Food &amp; Hospitality</p><p class="exh-blurb">A tea and fusion café in the making, bringing a few recipes to the floor.</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">MN</span><div class="exh-body"><h4>Melt N Dip</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">MH</span><div class="exh-body"><h4>MH Handcrafted</h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">Premium event fabrication and builds, specialising in brand activations and pop-ups.</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">MC</span><div class="exh-body"><h4>Mubarak Caterers</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Professional Services"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">NC</span><div class="exh-body"><h4>Nafees Consulting</h4><p class="exh-pav">Professional Services</p><p class="exh-blurb">Recruitment across the industrial and corporate sectors, partnering with businesses throughout North America on sales, HR, finance, IT and administration hiring.</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><a class="exh-mark-link" href="https://www.namaaproperties.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#4a2470">NP<img src="img/exhibitor-namaa-properties.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://www.namaaproperties.com/" target="_blank" rel="noopener noreferrer">Namaa Properties<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Real Estate &amp; Construction</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">NU</span><div class="exh-body"><h4>Nuqisoaps</h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">All-natural, organic and vegan skin and hair care, made with herbs and suited to all ages and skin types.</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">QL</span><div class="exh-body"><h4>Quami Libas</h4><p class="exh-pav">Retail &amp; Consumer Goods</p><p class="exh-blurb">Men's and children's wear — kurta, saya suits, pehran, izar, topi, pheta, phagdi, masalla and rumals.</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">RC</span><div class="exh-body"><h4>Royal Cyber</h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><a class="exh-mark-link" href="https://sbsamerica.org/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#8b4bbf">SA<img src="img/exhibitor-sbs-america.jpg" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://sbsamerica.org/" target="_blank" rel="noopener noreferrer">SBS America<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Real Estate &amp; Construction</p><p class="exh-blurb">A Mumineen investment fund bringing diversified options across asset classes to the community.</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">SC</span><div class="exh-body"><h4>Scentivana</h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">Perfume, attar and bakhoor.</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">SM</span><div class="exh-body"><h4>Shirin Marvi Real Estate</h4><p class="exh-pav">Real Estate &amp; Construction</p><p class="exh-blurb">Residential real estate.</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">SF</span><div class="exh-body"><h4>Siraj Frames</h4><p class="exh-pav">Retail &amp; Consumer Goods</p><p class="exh-blurb">Framed photographs and canvases of Aqa Moula, exhibiting on behalf of a family business in India.</p></div></article>
+        <article class="exh-card" data-pav="Healthcare &amp; Wellness"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">SS</span><div class="exh-body"><h4>Smooth Solutions Medspa</h4><p class="exh-pav">Healthcare &amp; Wellness</p></div></article>
+        <article class="exh-card" data-pav="Technology &amp; Innovation"><a class="exh-mark-link" href="https://www.spotgenius.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#4a2470">SP<img src="img/exhibitor-spotgenius.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://www.spotgenius.com/" target="_blank" rel="noopener noreferrer">SpotGenius<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Technology &amp; Innovation</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><a class="exh-mark-link" href="https://www.stallion-builders.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#8b4bbf">SB<img src="img/exhibitor-stallion-builders-inc.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://www.stallion-builders.com/" target="_blank" rel="noopener noreferrer">Stallion Builders, Inc<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Real Estate &amp; Construction</p></div></article>
+        <article class="exh-card" data-pav="Manufacturing"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">SS</span><div class="exh-body"><h4>Sukoon Selection</h4><p class="exh-pav">Manufacturing</p><p class="exh-blurb">Handcrafted jewellery.</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">SD</span><div class="exh-body"><h4>Surti Diamond Company</h4><p class="exh-pav">Retail &amp; Consumer Goods</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><a class="exh-mark-link" href="https://thepremiumbasket.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#8b4bbf">PB<img src="img/exhibitor-the-premium-basket.svg" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://thepremiumbasket.com/" target="_blank" rel="noopener noreferrer">The Premium Basket<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">TS</span><div class="exh-body"><h4>The Trendy Store</h4><p class="exh-pav">Retail &amp; Consumer Goods</p></div></article>
+        <article class="exh-card" data-pav="Retail &amp; Consumer Goods"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">TT</span><div class="exh-body"><h4>Tip Top</h4><p class="exh-pav">Retail &amp; Consumer Goods</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">VB</span><div class="exh-body"><h4>Vanilla Bean</h4><p class="exh-pav">Food &amp; Hospitality</p><p class="exh-blurb">A home-based pastry business specialising in custom desserts and cakes, run by a certified pastry chef.</p></div></article>
+        <article class="exh-card" data-pav="Healthcare &amp; Wellness"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">VH</span><div class="exh-body"><h4>Vela Healthcare and Wellness</h4><p class="exh-pav">Healthcare &amp; Wellness</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><span class="exh-mark" aria-hidden="true" style="--av-tint:#4a2470">WO</span><div class="exh-body"><h4>WOLF</h4><p class="exh-pav">Real Estate &amp; Construction</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#8b4bbf">ZS</span><div class="exh-body"><h4>Zahra's Kitchen</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Food &amp; Hospitality"><span class="exh-mark" aria-hidden="true" style="--av-tint:#6b2f9e">ZB</span><div class="exh-body"><h4>Zeez Bakeshop</h4><p class="exh-pav">Food &amp; Hospitality</p></div></article>
+        <article class="exh-card" data-pav="Real Estate &amp; Construction"><a class="exh-mark-link" href="https://zsglobalenterprise.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><span class="exh-mark wide" aria-hidden="true" style="--av-tint:#4a2470">ZG<img src="img/exhibitor-zs-global-enterprise.png" alt="" loading="lazy" onerror="this.remove()"></span></a><div class="exh-body"><h4><a class="exh-link" href="https://zsglobalenterprise.com/" target="_blank" rel="noopener noreferrer">ZS Global Enterprise<svg class="ic" aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></h4><p class="exh-pav">Real Estate &amp; Construction</p></div></article>
+      </div>
+
+      <p class="exh-foot" aria-live="polite">Showing all 53 confirmed exhibitors.</p>
+      <!-- EXHIBITORS:END -->
   </div>
 </section>
 
@@ -1681,6 +1827,50 @@ footer{background:var(--surface-2);border-top:1px solid var(--rule);padding-bloc
     items.forEach(function (el, i) {
       el.style.transitionDelay = (Math.min(i % 3, 2) * 80) + "ms";
       io.observe(el);
+    });
+  }
+
+  /* ---------- exhibitor pavilion filter ----------
+     Hides and shows cards that are already in the DOM rather than rendering
+     them, so the full list is in the HTML for anyone with JavaScript off and
+     for search engines — this section is the page's proof that the floor is
+     real, and it should not depend on a script to exist.
+
+     Note the cards deliberately carry no .rv class. The reveal observer above
+     has already run by this point and .rv starts at opacity 0, so a card first
+     shown by a filter click would never be observed and would stay invisible. */
+  var filter = document.querySelector(".exh-filter");
+  if (filter) {
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".exh-card"));
+    var foot = document.querySelector(".exh-foot");
+    var total = cards.length;
+
+    filter.addEventListener("click", function (ev) {
+      var chip = ev.target.closest(".exh-chip");
+      if (!chip) return;
+
+      /* Clicking the active pavilion clears it, matching the React page. */
+      var want = chip.getAttribute("data-pav");
+      if (want && chip.classList.contains("on")) want = "";
+
+      filter.querySelectorAll(".exh-chip").forEach(function (c) {
+        var on = (c.getAttribute("data-pav") || "") === want;
+        c.classList.toggle("on", on);
+        c.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+
+      var shown = 0;
+      cards.forEach(function (card) {
+        var match = !want || card.getAttribute("data-pav") === want;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+
+      if (foot) {
+        foot.textContent = want
+          ? "Showing " + shown + " of " + total + " exhibitors in " + want + "."
+          : "Showing all " + total + " confirmed exhibitors.";
+      }
     });
   }
 })();

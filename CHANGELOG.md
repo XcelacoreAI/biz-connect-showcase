@@ -25,6 +25,74 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### The exhibitor floor goes on the page
+This page has claimed "80 exhibitors and more to come, across eight industry
+pavilions" and "Eight focused zones" since launch, and then showed neither.
+Not one exhibitor was named, and of the eight pavilions only Manufacturing was
+ever mentioned. A new **Who is on the floor** section, between the guests of
+honour and the registration choice, delivers both.
+
+**53 exhibitors, not 80.** The committee's sheet lists 92 businesses, of which
+53 are marked Paid or Confirmed-not-paid. The rest are leads, declines and
+undecideds, and none of them can be announced. The hero tile and the proof
+bullet now both say 53 — the old 80 did not survive putting the actual floor
+on the page beneath it.
+
+**The eight pavilions, named at last**, with a count each: Food & Hospitality
+12, Retail & Consumer Goods 8, Technology & Innovation 8, Professional Services
+7, Manufacturing 7, Real Estate & Construction 7, Healthcare & Wellness 3,
+Creative Services 1. The strip doubles as a filter — 53 cards is past what is
+browsable on a phone, and the counts are the thing the committee asked to
+highlight, so one control does both jobs.
+
+**Ten real logos, and a slot shaped to hold them.** They come from the
+exhibitors' own websites, and the sheet's email column is what makes them
+attributable — 15 of the 53 gave a company-domain address, so the business and
+the site are linked by their own data rather than by a name search. The other
+38 use Gmail or Yahoo, and guessing from a name like WOLF, AMAZ or Tip Top
+risks putting the wrong company's logo on the page. Those keep a monogram.
+
+Logos get a **wide** slot, 96×52, because company logos are overwhelmingly
+wordmarks and a wordmark letterboxed into a square comes out a few pixels tall
+— BluPencil Consulting and SBS America were unreadable at 52×52. The monogram
+keeps its square, so the grid only changes shape where there is a logo, and the
+monogram stays underneath so a missing file uncovers letters rather than an
+empty box.
+
+Which card gets which is decided at import, not in the browser: the script
+looks for `img/exhibitor-<slug>.{svg,png,jpg,jpeg,webp}`. **Dropping a logo
+into `img/` is no longer enough on its own — re-run the script.**
+
+**Those ten link to the company's website**, opening in a new tab. Each URL was
+opened and confirmed to resolve before being listed — a link is a stronger
+claim than a logo, because sending a reader to the wrong business is worse than
+showing them the wrong mark. The name carries the link and gets an underline
+and an external-link icon; the logo repeats it for the mouse but is
+`aria-hidden` with `tabindex="-1"`, so neither the tab order nor a screen
+reader meets the same destination twice. All carry `rel="noopener noreferrer"`.
+
+The other 43 cards are deliberately not linked and are not clickable. Their
+exhibitors gave a Gmail or Yahoo address, so nothing in the committee's data
+identifies their website, and a wrong link is a worse failure than no link.
+
+**The cards are generated, not hand-written.** Everything between the
+`EXHIBITORS` markers comes from the sheet via
+`tr-react-app/scripts/build-exhibitors.mjs`, which rewrites this file and the
+React page from one source. Hand-editing that block loses the edit on the next
+import; name and description corrections belong in the script. The filter
+script and the styles are hand-written and are left alone.
+
+Note the cards carry no `.rv` class. The reveal observer runs once at load and
+`.rv` starts at `opacity: 0`, so a card first revealed by a filter click would
+never be observed and would stay invisible.
+
+**Still missing:** sponsorship. The sheet's Sponsors columns are empty on all
+92 rows, so there is nothing to show — Kettle & Oak's "platinum booth $950" is
+a booth size, not a sponsor tier. And only 18 of 53 exhibitors have a usable
+description; the rest render as name and pavilion, which stands on its own.
+
+Deploy: copy `index.html`. Nothing else changed.
+
 ### Abidali Neemuchwala is "Tech Investor and Ex-CEO Wipro" everywhere
 He carried two different titles on this page. The hero proof bullet, the
 keynote image alt text, the speaker row and the speaker card all described him
