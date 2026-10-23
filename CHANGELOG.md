@@ -63,6 +63,18 @@ Which card gets which is decided at import, not in the browser: the script
 looks for `img/exhibitor-<slug>.{svg,png,jpg,jpeg,webp}`. **Dropping a logo
 into `img/` is no longer enough on its own — re-run the script.**
 
+**Those ten link to the company's website**, opening in a new tab. Each URL was
+opened and confirmed to resolve before being listed — a link is a stronger
+claim than a logo, because sending a reader to the wrong business is worse than
+showing them the wrong mark. The name carries the link and gets an underline
+and an external-link icon; the logo repeats it for the mouse but is
+`aria-hidden` with `tabindex="-1"`, so neither the tab order nor a screen
+reader meets the same destination twice. All carry `rel="noopener noreferrer"`.
+
+The other 43 cards are deliberately not linked and are not clickable. Their
+exhibitors gave a Gmail or Yahoo address, so nothing in the committee's data
+identifies their website, and a wrong link is a worse failure than no link.
+
 **The cards are generated, not hand-written.** Everything between the
 `EXHIBITORS` markers comes from the sheet via
 `tr-react-app/scripts/build-exhibitors.mjs`, which rewrites this file and the
