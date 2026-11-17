@@ -72,6 +72,11 @@ beyond...", "Learn about...". No other bio on the page does, and it is the
 voice the 6 November rewrite had removed. It is kept because it is the
 committee's wording, but it is theirs to reconsider.
 
+`exhibitors.html` is untouched: it has no Zain Raj at all, so there is nothing
+there to correct twice.
+
+Deploy: copy `index.html`.
+
 ### Kettle & Oak's company description
 Supplied by the committee, so it keeps their first-person voice where the rest
 of the exhibitor blurbs are neutral third-person. Their sheet comment was the
