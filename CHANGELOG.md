@@ -25,6 +25,27 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Five descriptions from the committee's Drive
+Color Along Pediatric Therapy, Melt N Dip, Parwaaz Consulting Corporation, The
+Trendy Store and Zee Signs Inc. The floor now has **42 descriptions of 71**.
+
+Each company supplied first-person marketing copy to the committee's shared
+Drive folder of exhibitor materials — a .docx for Melt N Dip, Parwaaz and Zee
+Signs, and text set inside a promotional image for Color Along and The Trendy
+Store. These are neutral third-person condensations of it, the same treatment
+the 6 November batch got. The facts are the exhibitors' own, not researched.
+
+**The logos in that folder are NOT here.** The same folder holds usable logo
+artwork for at least Color Along, Melt N Dip, Parwaaz, The Trendy Store, Zee
+Signs and Simplify Recruiting, plus archives and vector files for Vanilla Bean,
+Greenback, Medtelligent and Pioneer Tours. None could be retrieved: the folder
+lives on a shared drive that is not synced to the machine doing this work, and
+the connector returns images for viewing rather than files that can be written
+to disk. Those cards still render a monogram. Getting the folder onto disk —
+syncing that shared drive, or downloading it — is all that is needed.
+
+Deploy: copy `index.html`.
+
 ### Ambees + Viking and HarborTechAI describe themselves
 Both supplied by the committee on 17 November and kept verbatim, so like Kettle
 & Oak they carry the company's own voice rather than the neutral third-person
