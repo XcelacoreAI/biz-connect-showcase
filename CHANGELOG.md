@@ -25,6 +25,29 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Mustansir Saifuddin and Shabbir Tapal join the AI panel
+Both with portraits, supplied by the committee. The AI session goes from four
+speakers to six and the hero tile from **21 to 23**.
+
+**Mustansir Saifuddin is not Ammar Saifuddin.** They are two different people
+who share a surname, and the page now carries both — Ammar on Biz Lifecycle,
+Mustansir here. Worth stating plainly because Ammar's entry was itself written
+"Mustansir Saifuddin" until the committee corrected his first name, so the two
+names have already been confused once. The supplied photographs are plainly
+different men. Their initials keep them apart in the grid as well: MS and AS.
+
+**Nine other speakers changed colour.** Tints are assigned by position in the
+array, so inserting two people at index 5 and 6 rotates every tint after them —
+Yusuf Hakim, Ian Quan, Hussain Ezzy, Fakhruddin Cutlerywala, Huzaifa Hussain,
+Shabbir Katabji, Willette LeGrant, Turan Quettawala and Demitrus T. Evans. The
+new values were computed with the React app's own assignment, not picked by
+hand, so the two sites still agree. Nobody sharing initials shares a tint.
+
+This is the drift the 3 November entry warned about: the grid here is a copy of
+a list that lives somewhere else, and an insertion reshuffles most of it.
+
+Deploy: copy `index.html` and `img/`.
+
 ### Kettle & Oak's company description
 Supplied by the committee, so it keeps their first-person voice where the rest
 of the exhibitor blurbs are neutral third-person. Their sheet comment was the
