@@ -25,6 +25,27 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Ambees + Viking and HarborTechAI describe themselves
+Both supplied by the committee on 17 November and kept verbatim, so like Kettle
+& Oak they carry the company's own voice rather than the neutral third-person
+summary the rest of the floor uses. The floor now has **37 descriptions of 71**.
+
+**Ambees + Viking** had no description at all — its card was name and pavilion
+only. It is a family-run Chicagoland manufacturer of awards, plaques, trophies,
+medals, signage and personalised gifts, made in-house in Westchester, IL.
+
+**HarborTechAI** replaces one. The old line was a neutral summary of their
+6 November email ("an AI and automation consultancy founded in 2025..."); the
+new copy is their own pitch and leads with a named product, Combo Studio,
+instead of the consultancy framing.
+
+Both live in the `BLURBS` map inside the import script, not in the generated
+array, so the next sheet export keeps them. Regenerating against the 12
+November sheet reproduced the committed file exactly apart from these two
+lines — 71 exhibitors, unchanged.
+
+Deploy: copy `index.html`.
+
 ### Mustansir Saifuddin and Shabbir Tapal join the AI panel
 Both with portraits, supplied by the committee. The AI session goes from four
 speakers to six and the hero tile from **21 to 23**.
