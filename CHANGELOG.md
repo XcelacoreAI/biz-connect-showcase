@@ -25,6 +25,43 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Twelve exhibitor logos from the committee's Drive
+The floor goes from 34 logos to **46 of 71**. Color Along Pediatric Therapy,
+Greenback Holdings, Medtelligent, Melt N Dip, Parwaaz Consulting, Pioneer Tours
+& Travels, Simplify Recruiting, Rise and Crumble, Simply Delicious, The Trendy
+Store, Vanilla Bean and Zee Signs Inc all stop showing a monogram.
+
+This finishes the job the previous entry could not: the folder is now on disk,
+so the artwork could actually be read.
+
+**Four needed real work rather than a copy:**
+
+- **Medtelligent** supplied only an Illustrator EPS, and ghostscript is not
+  installed, so nothing could rasterise it. It is a DOS EPS, which carries a
+  TIFF preview in its binary header — that was extracted directly (offset
+  639851, 536415 bytes) and used. 557x461, enough for a 96px tile.
+- **Pioneer Tours & Travels** supplied no logo at all, only a business card and
+  a banner as PDF. The card was rendered with `sips`, the logo cropped out of
+  it, and the card's pale mint ground flooded to white so the tile does not
+  render as a tinted block.
+- **Simply Delicious** supplied a promotional flyer, not a logo. The wordmark
+  badge across the top of it was cropped out. Its pink ground is part of the
+  badge artwork, not a background this added.
+- **Greenback** and **Simplify Recruiting** arrived as SVG and are kept as SVG
+  rather than rasterised.
+
+Sizes follow the rest of `img/`: longest side 900px or less, 8&ndash;40 KB.
+Artwork with transparency stays PNG and is quantised; artwork without it
+becomes JPEG, since the tiles render at 96x52 and nothing here needs more.
+
+**Still monogrammed: 25 of 71.** Those businesses have no folder in the Drive at
+all, so there is nothing to add. Separately, Luxe Fine Jewelry, Namaa
+Properties, Pioneer Tours and Simplify Recruiting have a logo but still no
+description &mdash; their folders hold artwork and video only, so that copy has to
+come from the committee.
+
+Deploy: copy `index.html` and `img/`.
+
 ### Five descriptions from the committee's Drive
 Color Along Pediatric Therapy, Melt N Dip, Parwaaz Consulting Corporation, The
 Trendy Store and Zee Signs Inc. The floor now has **42 descriptions of 71**.
