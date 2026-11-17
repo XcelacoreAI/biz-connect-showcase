@@ -48,6 +48,35 @@ a list that lives somewhere else, and an insertion reshuffles most of it.
 
 Deploy: copy `index.html` and `img/`.
 
+### Zain Raj's description, replaced with the committee's own copy
+His keynote card now carries the text the committee supplied, in place of the
+third-person rewrite that had been there since 6 November. Nothing else about
+him changes — name, title and the CEO Stories session are the same, and the
+agenda rail never carried a bio.
+
+It is a straight replacement, so what the old copy had and this one does not
+goes with it: the Epsilon Agency Services and Euro RSCG Discovery roles, the
+FCB/JWT/Grey history, the two-time Amazon bestseller line for *Brand Rituals*,
+the Wall Street Journal/Forbes/Fast Company mentions, and the framing of the
+keynote as being about brand loyalty. If any of that should stay, it needs
+adding back deliberately.
+
+**Two paragraphs now, not one.** The copy opens with a pitch for the session
+and then gives the biography; they do different jobs and run together badly as
+a single block. `.spk-more > p` already carries its own `margin-top`, so a
+second `<p>` spaces itself and no CSS changed. He is the only speaker with a
+multi-paragraph bio.
+
+One thing to note: the first paragraph speaks to the reader directly — "Think
+beyond...", "Learn about...". No other bio on the page does, and it is the
+voice the 6 November rewrite had removed. It is kept because it is the
+committee's wording, but it is theirs to reconsider.
+
+`exhibitors.html` is untouched: it has no Zain Raj at all, so there is nothing
+there to correct twice.
+
+Deploy: copy `index.html`.
+
 ### Kettle & Oak's company description
 Supplied by the committee, so it keeps their first-person voice where the rest
 of the exhibitor blurbs are neutral third-person. Their sheet comment was the
