@@ -25,6 +25,47 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Sponsors become three tiers, and Shapiro+Raj leads
+The band was a flat row of four. The committee's tote-bag artwork is the first
+document to state tiers at all, and this follows it: **platinum, gold and
+bronze, twelve sponsors**. The eyebrow changes from "Platinum sponsors" to
+"Our valued sponsors", since the band is no longer only platinum.
+
+**Platinum** &mdash; Shapiro+Raj, Kettle & Oak, Zee Signs, HarborTechAI, Ezzy
+Manufacturing, DM Clinical Research. The four already here keep their places;
+Shapiro+Raj and DM Clinical Research are new. Shapiro+Raj leads, as Mansoor
+asked and as the artwork shows.
+
+**Gold** &mdash; AI-Skills, Royal Cyber. **Bronze** &mdash; ALIS, Jafferjees, smbiz,
+SpotGenius.
+
+**Two sponsors have no logo artwork**, so the tile falls back to their name set
+in Marcellus: DM Clinical Research and smbiz. They are not dropped &mdash; a missing
+file is our gap, not theirs, and somebody who paid for a tier belongs on the
+wall. Supply either logo and it replaces the text with no other change.
+
+**smbiz is deliberately not linked.** `smbiz.com` answers 200 but serves no
+`<title>` and nothing identifying them, so it cannot be confirmed as theirs. An
+unverified link under a sponsor's name is worse than no link. Every other
+address here was opened and checked: `shapiroraj.com` serves their own site,
+`dmclinical.com` redirects to `dmclinicalresearch.com` so the target is what is
+stored, and `spotgenius.com` is the parking-management company whose car mark is
+on the artwork.
+
+**Shapiro+Raj's logo was supplied as white artwork on transparency**, which is
+the exact inverse of what this band needs &mdash; the tiles are white precisely
+because every other logo is dark on light. It was inverted to black rather than
+rasterised from the artwork photo. That loses the red accent on the "+"; a
+proper colour lockup would be better if one is supplied.
+
+Column counts are fixed per tier above 60rem rather than left to `auto-fit`,
+which packed platinum 4+2 and bronze 3+1 and left a half-empty row under each.
+Platinum is three up and bronze four, matching the artwork. Gold and bronze
+tiles are shorter than platinum, so the tier reads in the layout and not only
+in the label.
+
+Deploy: copy `index.html` and `img/`.
+
 ### Twelve exhibitor logos from the committee's Drive
 The floor goes from 34 logos to **46 of 71**. Color Along Pediatric Therapy,
 Greenback Holdings, Medtelligent, Melt N Dip, Parwaaz Consulting, Pioneer Tours
