@@ -25,6 +25,28 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### Parwaaz Consulting: new logo, their own words, and a link
+All three supplied by Mansoor.
+
+**The logo** is the same artwork as before, but the copy taken from their Drive
+folder had been trimmed tight to the ink and was clipping the descenders on
+"consulting corporation". This one is their web version, which carries its own
+padding. 600x253, 12 KB.
+
+**The description** is now the company's full wording, replacing the condensed
+third-person summary written from their Drive `.docx` earlier today. Like
+Kettle & Oak and Ambees + Viking it is kept verbatim, so it keeps their first
+person. It is the longest blurb on the floor, deliberately: its second sentence
+explains what a PMO is, which is what a reader outside their industry needs
+before the rest of the card means anything. Do not trim that to even the card
+lengths up.
+
+**The card is now linked** to parwaazcc.com, verified 200 and serving their own
+site. It had no URL until now, so the card gains both the `exh-mark-link`
+wrapper and the `exh-link` heading the other linked cards use.
+
+Deploy: copy `index.html` and `img/`.
+
 ### DM Clinical Research gets its logo
 Supplied by Mansoor. Their platinum tile was carrying the name set in type
 because no artwork had been sent; it now carries the logo. Nothing else changed
