@@ -25,6 +25,21 @@ and do not need to be served (harmless if they are).
 
 ## Unreleased
 
+### DM Clinical Research gets its logo
+Supplied by Mansoor. Their platinum tile was carrying the name set in type
+because no artwork had been sent; it now carries the logo. Nothing else changed
+&mdash; the fallback exists precisely so that adding a `file` is the whole edit.
+
+The artwork arrived dark-on-light and already the right way round for the white
+tile, so it needed only a trim and a strip. It is 270x107, small beside the rest
+of `img/`, but the tile renders at 96x52 so that is still about 2.8x headroom.
+A larger original would be worth swapping in if one turns up.
+
+**smbiz is now the only sponsor without a logo**, and still the only one
+without a confirmed address.
+
+Deploy: copy `index.html` and `img/`.
+
 ### Sponsors become three tiers, and Shapiro+Raj leads
 The band was a flat row of four. The committee's tote-bag artwork is the first
 document to state tiers at all, and this follows it: **platinum, gold and
